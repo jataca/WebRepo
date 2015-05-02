@@ -7,7 +7,7 @@ body {font-family:Arial, Helvetica, sans-serif; font-size:12px;}
 top: 50%;
 left: 50%;
 margin-top: -200px;
-margin-left: -310px
+margin-left: -310px;
 }
 .fadein img { position:absolute; left:0; top:0; border-style: solid;
     border-width: medium;}
@@ -23,7 +23,7 @@ margin-left: -310px
   border-bottom-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-wut?
+
 }
 
 
