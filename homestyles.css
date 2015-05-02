@@ -1,0 +1,47 @@
+
+body {font-family:Arial, Helvetica, sans-serif; font-size:12px;}
+
+.title {text-align: center; position:fixed; left: 50%;-webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); margin: 50px 0px;}
+.fadein { height:332px; width:500px; position: fixed;
+top: 50%;
+left: 50%;
+margin-top: -200px;
+margin-left: -310px
+}
+.fadein img { position:absolute; left:0; top:0; border-style: solid;
+    border-width: medium;}
+
+.fadelinks, .faderandom { position:relative; height:332px; width:500px; }
+.fadelinks > *, .faderandom > * { position:absolute; left:0; top:0; display:block; }
+
+.multipleslides { position:relative; height:332px; width:500px; float:left; }
+.multipleslides > * { position:absolute; left:0; top:0; display:block; }
+
+  ul{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+}
+
+
+    .wrapper {
+      background-color: #b0c4de;
+        text-align: center;
+        border-radius: 10px;
+    }
+    .wrapper ul {
+        display: inline-block;
+        margin: 10px	;
+        padding: 0;
+        /* For IE, the outcast */
+        zoom:1;
+        *display: inline;
+    }
+    .wrapper li {
+        float: left;
+        padding: 0px 100px;
+
+    }
