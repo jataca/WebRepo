@@ -65,3 +65,11 @@ body {font-family:Arial, Helvetica, sans-serif; font-size:12px;}
     height: 400px;
     width: 90%;
 }
+
+.display{
+  background-color: #ccffcc;
+  padding-top: 75px;
+  float: right;
+  height: 400px;
+  width: 90%;
+}
