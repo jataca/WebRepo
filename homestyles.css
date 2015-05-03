@@ -54,13 +54,13 @@ body {font-family:Arial, Helvetica, sans-serif; font-size:12px;}
 .floatleft {
     float:left;
     padding-left: 15px;
-    pdading-top: 50px
+    pdading-top: 75px
     width: 10%;
     height: 400px;
 }
 
 .floatright {
-    padding-top: 50px;
+    padding-top: 75px;
     float: right;
     height: 400px;
     width: 90%;
