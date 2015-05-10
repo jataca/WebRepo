@@ -1,8 +1,14 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE HTML>
 <html>
 <title>PHP Survey</title>
 <head>
   <link rel="stylesheet" type="text/css" href="homestyles.css">
+  <title>PHP Survey</title>
 </head>
 <body>
   <div class="wrapper">
@@ -52,7 +58,7 @@
   <input type="radio" name="q5" value="batman">Batman<br>
   <input type="radio" name="q5" value="superman">Superman<br>
   <input type="radio" name="q5" value="spiderman">Spiderman<br>
-  <input type="radio" name="q5" value="ironman">Ironman<br>
+  <input type="radio" name="q5" value="black widow">Black Widow<br>
   <input type="radio" name="q5" value="other">other<br><br>
 
   <input type="submit">
@@ -61,6 +67,29 @@
 <form action = "results.php" method="post">
   <input type="submit" value="View results">
 </form>
+
 </div>
+
+<?php
+  $visits = 0;
+  $countKey = 'pageCount';
+  if (isset($_SESSION[$countKey]))
+  {
+     $visits = $_SESSION[$countKey];
+  }
+
+  $visits++;
+
+  $_SESSION[$countKey] = $visits;
+  echo "You have been here $visits times<br />";
+
+  if ($visits > 1){
+    echo "<script type='text/javascript'>window.location.assign('results.php')</script>";
+  }
+
+
+
+?>
+
 </body>
 </html>
