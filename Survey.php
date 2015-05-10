@@ -78,7 +78,6 @@ session_start();
      $visits = $_SESSION[$countKey];
   }
 
-  $visits++;
 
   $_SESSION[$countKey] = $visits;
   echo "You have been here $visits times<br />";
