@@ -79,7 +79,7 @@ session_start();
   $_SESSION[$countKey] = $visits;
   echo "You have been here $visits times<br />";
 
-  if ($visits > 1){
+  if ($visits > 0){
     echo "<script type='text/javascript'>window.location.assign('results.php')</script>";
   }
 
