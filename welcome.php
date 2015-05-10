@@ -21,9 +21,6 @@ session_start();
   </div>
   <?php
 
-  echo "Hello " . $_POST["name"];
-  echo "Your email is " . $_POST["email"] . "<br>";
-
   $myfile = fopen("ch09.txt", "r") or die("Unable to open file!");
   $array = file("ch09.txt", FILE_IGNORE_NEW_LINES);
   fclose($myfile);
