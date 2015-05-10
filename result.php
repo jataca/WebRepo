@@ -40,7 +40,7 @@ session_start();
 
   echo "You have been here $visits times<br />";
 
-if ($visits == 2){
+if ($visits == 1){
 
   if ($_POST['q1'] == 'male') {
     $array[0] += 1; // male
