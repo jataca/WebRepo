@@ -26,9 +26,6 @@ session_start();
   <div class="center">
 
 <form action="result.php" method="post">
-  Name: <input type="text" name="name"><br>
-  E-mail: <input type="text" name="email"><br><br>
-
   1.Gender: <br>
   <input type="radio" name="q1" value="male">Male<br>
   <input type="radio" name="q1" value="female">Female<br><br>

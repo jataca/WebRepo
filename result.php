@@ -16,7 +16,7 @@ session_start();
           <li><a href="http://php-jcasperson.rhcloud.com/home.html">Home</a></li>
           <li><a href="http://php-jcasperson.rhcloud.com/aboutme.html">About Me</a></li>
           <li><a href="http://php-jcasperson.rhcloud.com/contact.html">Contact</a></li></li>
-          <li><a href="">Assignments (Coming soon)</a></li>
+          <li><a href="http://php-jcasperson.rhcloud.com/assignments.html">Assignments</a></li>
       </ul>
   </div>
   <?php
@@ -37,8 +37,6 @@ session_start();
   $visits++;
 
   $_SESSION[$countKey] = $visits;
-
-  echo "You have been here $visits times<br />";
 
 if ($visits == 1){
 
