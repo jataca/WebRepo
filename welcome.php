@@ -11,7 +11,7 @@
   Your email address is: <?php echo $_POST["email"]; ?>
 
   <?php
-  $myfile = fopen("webdictionary2.txt", "r") or die("Unable to open file!");
+  $myfile = fopen("testfile.txt", "r") or die("Unable to open file!");
   echo fread($myfile,filesize("webdictionary.txt"));
   fclose($myfile);
   ?>
