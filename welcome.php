@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <?php
-//  $myfile = fopen("webdictionary.txt", "w") or die("Unable to open file!");
-//  fwrite($myfile, $_POST["name"]);
-//  fclose($myfile);
+  $myfile = fopen("data.txt", "w") or die("Unable to open file!");
+  fwrite($myfile, $_POST["name"]);
+  fclose($myfile);
 ?>
 <html>
 <body>
@@ -14,6 +14,9 @@
   $myfile = fopen("testfile.txt", "r") or die("Unable to open file!");
   echo fread($myfile,filesize("webdictionary.txt"));
   fclose($myfile);
+  $myfile = fopen("data.txt", "r") or die("Unable to open file!");
+  echo fread("data.txt",filesize("data.txt"));
+
   ?>
 </body>
 </html>
