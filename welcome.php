@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
   $myfile = fopen("webdictionary.txt", "w") or die("Unable to open file!");
-  fwrite($myfile, $_POST["name"]);
+//  fwrite($myfile, $_POST["name"]);
   fclose($myfile);
 ?>
 <html>
