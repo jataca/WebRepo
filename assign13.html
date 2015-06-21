@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+  <head>
+    <link href="style05.css" type="text/css" rel="stylesheet"/>
+<style>
+    div {
+    text-align:center;
+ }
+    </style>
+    <title>Assignment 13</title>
+    <script>
+      function ajaxRequest()
+      {
+         var xhr; <!-- ajax object -->
+         if (window.XMLHttpRequest)
+         { 
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xhr=new XMLHttpRequest(); <!-- 2 -->
+         }
+         else
+         {
+            // code for IE6, IE5
+            xhr=new ActiveXObject("Microsoft.XMLHTTP");
+         }
+           <!-- server response -->
+         xhr.onreadystatechange=function()
+         {
+            if (xhr.readyState==4 && xhr.status==200)
+            {
+             document.getElementById("response").innerHTML=xhr.responseText;
+         
+            }
+         }
+         
+         <!-- send request -->
+         var firstName = document.getElementById("firstName").value;
+         var lastName = document.getElementById("lastName").value;
+         var studentId = document.getElementById("studentId").value;
+         var skillLevel = document.getElementById("skillLevel").value;
+         var instrument = document.getElementById("instrument").value;
+         var location = document.getElementById("location").value;
+         var room = document.getElementById("room").value;
+         var time = document.getElementById("time").value;
+
+         // second person for duet
+         var firstName2 = document.getElementById("firstName2").value;
+         var lastName2 = document.getElementById("lastName2").value;
+         var studentId2 = document.getElementById("studentId2").value;
+         var skillLevel2 = document.getElementById("skillLevel2").value;
+         var instrument2 = document.getElementById("instrument2").value;
+
+         var string = "?firstName=" + firstName + "&lastName=" + lastName + "&studentId=" + studentId 
+                    + "&skillLevel=" + skillLevel + "&instrument=" + instrument + "&location=" + location
+                    + "&room=" + room + "&time=" + time +"&firstName2=" + firstName2 + "&lastName2=" + lastName2 
+                    +"&studentId2=" + studentId2 + "&skillLevel2=" + skillLevel2 + "&instrument2=" + instrument2;
+         
+         var test = "?firstName=" + firstName;
+         var url = "http://157.201.194.254/~jataca/assign13.php";
+         url += string;
+         xhr.open("GET",url, true);
+         xhr.send();
+           
+      }
+
+      function validate()
+      { 
+         var firstName = document.getElementById("firstName").value;
+         var lastName = document.getElementById("lastName").value;
+         var studentId = document.getElementById("studentId").value;
+         var skillLevel = document.getElementById("skillLevel").value;
+         var instrument = document.getElementById("instrument").value;
+         var location = document.getElementById("location").value;
+         var room = document.getElementById("room").value;
+         var time = document.getElementById("time").value;
+        
+
+         // second person for duet
+         var firstName2 = document.getElementById("firstName2").value;
+         var lastName2 = document.getElementById("lastName2").value;
+         var studentId2 = document.getElementById("studentId2").value;
+         var skillLevel2 = document.getElementById("skillLevel2").value;
+         var instrument = document.getElementById("instrument2").value;
+         
+         // check first name
+         if (firstName === "") 
+         { 
+            document.getElementById("errorMessage").innerHTML = "Invalid First Name";
+            document.getElementById("firstName").focus();
+            return false;
+         }
+         else
+            document.getElementById("errorMessage").innerHTML = "";
+        
+       
+         // check last name
+         if (lastName == "") 
+         {
+            document.getElementById("errorMessage").innerHTML = "Invalid Last Name";
+            document.getElementById("lastName").focus();
+            return false
+         }
+         else
+            document.getElementById("errorMessage").innerHTML = "";
+
+         // check student ID
+         if (studentId =="") 
+         {
+            document.getElementById("errorMessage").innerHTML = "Invalid Student ID";
+            document.getElementById("studentID").focus();
+            return false
+         }
+         else
+         {
+            document.getElementById("errorMessage").innerHTML = "";   
+            ajaxRequest();
+         }
+         
+       }
+      
+       function clearForm()
+       {
+          document.getElementById("personalInfo").reset();
+          document.getElementById("errorMessage").innerHTML = "";
+
+       }
+
+       function showDuet(value)
+       {
+         if (value === "Duet")
+            document.getElementById("secondPerson").style.display = 'block';
+         else
+         {       
+             document.getElementById("secondPerson").style.display = 'none';
+             document.getElementById("firstName2").value = "";
+             document.getElementById("lastName2").value = "";
+             document.getElementById("studentId2").value = ""; 
+         }
+       }
+    </script>
+  </head>
+
+  <body onload="ajaxRequest()">
+  
+    <div style="border: 2px solid";>
+        <h1>Piano Festival Registration</h1>
+    <form id="personalInfo">
+      <label><p>First Name: <input type="text" name="fName" id="firstName"/><br/></p></label>
+      <label><p>Last Name: <input type="text" name="lName" id="lastName"/><br/></p></label>
+      <label><p>Student ID: <input type="text" name="id" id="studentId"/><br/></p></label>
+      <label><p>Skill Level: <select name="sLevel" id="skillLevel">
+            <option value="beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="preAdvanced">Pre-Advanced</option>
+            <option value="advanced">Advanced</option>
+      </select></p></label>
+      <label><p>Instrument: <select name="instrument" id="instrument">
+            <option value="piano">Piano</option>
+            <option value="voice">Voice</option>
+            <option value="string">String</option>
+            <option value="organ">Organ</option>
+            <option value="other">Other</option>
+       </select></p></label>
+      
+     
+        <input type="radio" name="pType" onClick="showDuet(this.value)" value="Solo"  />Solo
+        <input type="radio" name="pType" onClick="showDuet(this.value)" value="Duet"/>Duet
+        <input type="radio" name="pType" onClick="showDuet(this.value)" value="Concerto" />Concerto
+   
+    <div id="secondPerson" style="display:none"> 
+      <label><p>First Name: <input type="text" name="fName" id="firstName2"/><br/></p></label>
+      <label><p>Last Name: <input type="text" name="lName" id="lastName2"/><br/></p></label>
+      <label><p>Student ID: <input type="text" name="id" id="studentId2"/><br/></p></label>
+      <label><p>Skill Level: <select name="sLevel" id="skillLevel2">
+            <option value="beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="preAdvanced">Pre-Advanced</option>
+            <option value="advanced">Advanced</option>
+      </select></p></label>
+      <label><p>Instrument: <select name="instrument" id="instrument2">
+            <option value="piano">Piano</option>
+            <option value="voice">Voice</option>
+            <option value="string">String</option>
+            <option value="organ">Organ</option>
+            <option value="other">Other</option>
+      </select></p></label>
+    </div>
+      <label><p>Location: <select name="location" id="location">
+            <option value="snow">Snow</option>
+            <option value="austin">Austin</option>
+            <option value="clarke">Clarke</option>
+            <option value="taylor">Taylor</option>
+            <option value="icenter">I-Center</option>
+      </select></p></label>
+      <label><p>Room: <input type="text" name="theRoom" id="room"/><br/></p></label>
+      <label><p>Time: <select name="time" id="time">
+            <option value="8:00">8:00 am</option>
+            <option value="8:30">8:30 am</option>
+            <option value="9:00">9:00 am</option>
+            <option value="9:30">9:30 am</option>
+            <option value="10:00">10:00 am</option>
+            <option value="10:30">10:30 am</option>
+            <option value="11:00">11:00 am</option>
+            <option value="11:30">11:30 am</option>
+            <option value="12:00">12:00 pm</option>
+            <option value="12:30">12:30 pm</option>
+            <option value="1:00">1:00 pm</option>
+            <option value="1:30">1:30 pm</option>
+            <option value="2:00">2:00 pm</option>
+            <option value="2:30">2:30 pm</option>
+      </select></p></label>
+      <p id="errorMessage" class="red"></p>
+      <button type="button" onClick="validate()">Register student</button><br/>
+      <button type="button"  onclick="clearForm()">Clear Form</button>
+    </form>
+    </div>
+  
+        <p id="response" style="margin:0 auto; border-radius:25px; 
+                                width:450px; background-color:#79BEDB;
+                                padding:10px;border: 2px solid;"  ></p>
+  
+  
+  </body>
+</html>

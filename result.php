@@ -5,11 +5,10 @@ session_start();
 
 <!DOCTYPE HTML>
 <html>
-<head>
-<title>Hello World</title>
-<link rel="stylesheet" type="text/css" href="homestyles.css">
-
-</head>
+  <head>
+    <title>Hello World</title>
+    <link rel="stylesheet" type="text/css" href="homestyles.css">
+  </head>
 <body>
   <div class="wrapper">
       <ul >
