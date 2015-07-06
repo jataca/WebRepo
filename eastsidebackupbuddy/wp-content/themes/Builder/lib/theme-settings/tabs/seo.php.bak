@@ -1,0 +1,207 @@
+<?php
+
+/*
+Written by Chris Jean for iThemes.com
+Version 0.0.1
+
+Version History
+	0.0.1 - 2010-11-03 - Chris Jean
+		Initial version
+*/
+
+
+if ( ! class_exists( 'ITThemeSettingsTabSEO' ) ) {
+	class ITThemeSettingsTabSEO extends ITThemeSettingsTab {
+		var $_var = 'theme-settings-seo';
+		
+		
+		function _save() {
+			$data = ITForm::get_post_data();
+			
+			$this->_options = array_merge( $this->_options, $data );
+			
+			$this->_parent->_save();
+			
+			ITUtility::show_status_message( 'SEO Settings Updated' );
+		}
+		
+		function _editor() {
+			$form =& new ITForm( $this->_options );
+			$this->_form =& $form;
+			
+			$this->_add_meta_box( 'titles', __( 'Titles', 'LION' ) );
+//			$this->_add_meta_box( 'menu_builder', __( 'Menu Builder', 'LION' ), 'left', false );
+//			$this->_add_meta_box( 'widgets', __( 'Identify Widget Areas', 'LION' ), 'left', false );
+//			$this->_add_meta_box( 'analytics', __( 'Analytics / Tracking Code', 'LION' ), 'left', false );
+//			$this->_add_meta_box( 'seo', __( 'Search Engine Optimization', 'LION' ), 'left', false );
+			// Enable/disable comments for different areas (posts, pages, etc)
+//			$this->_add_meta_box( 'comments', __( 'Comments', 'LION' ), 'left', false );
+			
+?>
+	<div class="wrap">
+		<?php $form->start_form(); ?>
+			<?php screen_icon(); ?>
+			<?php $this->_print_editor_tabs(); ?>
+			
+			<p><?php _e( 'Meta tags give web browsers and search engines information about the current page. While creating quality, relevant content is the most important SEO practice of all, having good meta tags <i>can</     i> improve your rankings and provide better information in your search listings.', 'LION' ); ?></p>
+			
+			<?php $this->_print_meta_boxes(); ?>
+			
+			<p class="submit">
+				<?php $form->add_submit( 'save', array( 'value' => 'Save SEO Settings', 'class' => 'button-primary' ) ); ?>
+				<?php $form->add_submit( 'reset', array( 'value' => 'Restore Default Settings', 'class' => 'button-secondary' ) ); ?>
+			</p>
+			
+			<?php $form->add_hidden( 'editor_tab', $this->_parent->_active_tab ); ?>
+		<?php $form->end_form(); ?>
+		
+		<form style="display:none" method="get" action="">
+			<p>
+				<?php wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false ); ?>
+				<?php wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false ); ?>
+			</p>
+		</form>
+	</div>
+	
+	<?php $this->_init_meta_boxes(); ?>
+<?php
+			
+		}
+		
+		
+		// Meta Boxes //////////////////////////////////////
+		
+		function meta_box_titles() {
+			list_title_meta_box();
+		}
+		
+		function meta_box_menu_builder() {
+			
+?>
+	<?php if ( function_exists( 'wp_nav_menu' ) ) : ?>
+		<p><?php printf( __( 'Builder offers a variety of ways to create navigation menus. These options are the original Menu Builder offered by Builder. As long as your site is running WordPress 3.0 or above, you can use the much more powerful <a href="%1$s">Menus editor</a> built into WordPress and found under <a href="%1$s">Appearance &gt; Menus</a>. It is recommended that you use the new Menus editor rather than the following options as the Menus editor offers many more options.', 'LION' ), admin_url( 'nav-menus.php' ) ); ?></p>
+	<?php endif; ?>
+	
+	<p><?php _e( 'The Navigation Module offers the following options:', 'LION' ); ?></p>
+	
+	<table class="settings-table" cellspacing="0">
+		<tr><th scope="row"><?php _e( 'Builder Settings Pages', 'LION' ); ?></th><td><?php _e( 'Controlled by the Pages checkboxes below', 'LION' ); ?></td></tr>
+		<tr><th scope="row"><?php _e( 'Builder Settings Categories', 'LION' ); ?></th><td><?php _e( 'Controlled by the Categories checkboxes below', 'LION' ); ?></td></tr>
+		<tr><th scope="row"><?php _e( 'WordPress Pages', 'LION' ); ?></th><td><?php _e( 'Lists all the pages on the site', 'LION' ); ?></td></tr>
+		<?php if ( function_exists( 'wp_nav_menu' ) ) : ?>
+			<tr scope="row"><th><?php _e( 'Custom Menu - MENU NAME', 'LION' ); ?></th><td><?php printf( __( 'An option is avaiable for each menu created in WordPress\' built-in <a href="%s">Menus editor</a>', 'LION' ), admin_url( 'nav-menus.php' ) ); ?></td></tr>
+		<?php endif; ?>
+	</table>
+	<hr />
+	
+	<div class="clearfix">
+		<div class="menu-builder-type pages">
+			<h4>Pages</h4>
+			
+			<div class="menu-builder-list-container">
+			</div>
+		</div>
+		
+		<div class="menu-builder-type categories">
+			<h4>Categories</h4>
+			
+			<div class="menu-builder-list-container">
+			</div>
+		</div>
+	</div>
+<?php
+			
+		}
+		
+		function meta_box_widgets() {
+			$form =& $this->_form;
+			
+?>
+	<p><?php _e( 'Much of the power of Builder comes from the large number of widget areas you can create an manage. To make it easier to manage such a large number of widgets, Builder can show the name of each widget area (sidebar) by adding some filler content to the area. This both identifies the name of the widget area and makes it easier to see the full structure of a layout. These settings control this feature.', 'LION' ); ?></p>
+	<hr />
+	
+	<p><?php _e( 'Who should be able to see the widget identification information?', 'LION' ); ?></p>
+	<ul class="no-bullets">
+		<li><label for="identify_widget_areas_admin"><?php $form->add_radio( 'identify_widget_areas', array( 'value' => 'admin', 'id' => 'identify_widget_areas_admin' ) ); ?> <?php _e( 'Only Administrators (default)', 'LION' ); ?></label></li>
+		<li><label for="identify_widget_areas_user"><?php $form->add_radio( 'identify_widget_areas', array( 'value' => 'user', 'id' => 'identify_widget_areas_user' ) ); ?> <?php _e( 'Any logged in user', 'LION' ); ?></label></li>
+		<li><label for="identify_widget_areas_all"><?php $form->add_radio( 'identify_widget_areas', array( 'value' => 'all', 'id' => 'identify_widget_areas_all' ) ); ?> <?php _e( 'Everyone including visitors that are not logged in', 'LION' ); ?></label></li>
+		<li><label for="identify_widget_areas_none"><?php $form->add_radio( 'identify_widget_areas', array( 'value' => 'none', 'id' => 'identify_widget_areas_none' ) ); ?> <?php _e( 'Nobody, this setting disables the feature', 'LION' ); ?></label></li>
+	</ul>
+	<br />
+	
+	<p><?php _e( 'When should a widget area be identified?', 'LION' ); ?></p>
+	<ul class="no-bullets">
+		<li><label for="identify_widget_areas_method_empty"><?php $form->add_radio( 'identify_widget_areas_method', array( 'value' => 'empty', 'id' => 'identify_widget_areas_method_empty' ) ); ?> <?php _e( 'Only if widget area does not have any widgets (default)', 'LION' ); ?></label></li>
+		<li><label for="identify_widget_areas_method_always"><?php $form->add_radio( 'identify_widget_areas_method', array( 'value' => 'always', 'id' => 'identify_widget_areas_method_always' ) ); ?> <?php _e( 'Always identify the widget area', 'LION' ); ?></label></li>
+	</ul>
+<?php
+			
+		}
+		
+		function meta_box_analytics() {
+			$form =& $this->_form;
+			
+?>
+	<p><?php _e( 'Keeping track of information about your site\'s visitors greatly helps in understanding how people get to your site and what content they are interested in. The following options allow you to quickly configure Builder to be able to use a variety of analytics services.' ); ?></p>
+	<hr />
+	
+	<table class="settings-table add-vertical-margins" cellspacing="0">
+		<tr>
+			<th scope="row"><label for="google-analytics-ua"><?php _e( 'Google Analytics UA', 'LION' ); ?></label></th>
+			<td>
+				<?php $form->add_text_box( 'google-analytics-ua' ); ?>
+				<p class="description">Ex: UA-12345-6</p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row"><label for="enable-woopra"><?php _e( 'Enable Woopra Tracking', 'LION' ); ?></label></th>
+			<td><?php $form->add_check_box( 'enable-woopra' ); ?></td>
+		</tr>
+		<tr>
+			<th scope="row"><label for="tracking-code-header"><?php _e( 'Header Tracking Code', 'LION' ); ?></label></th>
+			<td><?php $form->add_text_area( 'tracking-code-header', array( 'style' => 'width:400px;height:100px;' ) ); ?></td>
+		</tr>
+		<tr>
+			<th scope="row"><label for="tracking-code-footer"><?php _e( 'Footer Tracking Code', 'LION' ); ?></label></th>
+			<td><?php $form->add_text_area( 'tracking-code-footer', array( 'style' => 'width:400px;height:100px;' ) ); ?></td>
+		</tr>
+	</table>
+<?php
+			
+		}
+		
+		function meta_box_seo() {
+			$form =& $this->_form;
+			
+?>
+	<p><?php printf( __( '<a href="%s">SEO</a> is short for Search Engine Optimization. The goal of of SEO is to increase traffic to the site through search engines, typically by focusing on specific keywords and phrases.', 'LION' ), 'http://en.wikipedia.org/wiki/Search_engine_optimization' ); ?></p>
+	<p><?php _e( 'While much of the SEO process relies upon creating content that is relavent and follows SEO best-practices, both WordPress and Builder offer tools that help you control the SEO characteristics of your site. These options allow you to customize the SEO features of Builder.', 'LION' ); ?></p>
+	<hr />
+	
+<!--	<p><?php //printf( __( 'Page titles tell visitors what page they are currently on; however, studies show that users rarely look at the title at the top of the browser. Titles are still very important though. Search engines, social news websites (such as <a href="%1$s">Digg</a> or <a href="%2$s">reddit</a>), and ', 'LION' ), 'http://digg.com/', 'http://www.reddit.com/' ); ?></p>-->
+	
+	<p><?php printf( __( 'The value of <a href="%s">META keywords</a> is typically considered to be very low or non-existent. Having them can\'t hurt your site however.', 'LION' ), 'http://en.wikipedia.org/wiki/Meta_element#The_keywords_attribute' ); ?></p>
+	<p><?php _e( 'Builder can automatically generate keywords for your post pages based upon the tags you have assigned to the post. You can use the following options to customize how Builder uses keywords.', 'LION' ); ?></p>
+	<ul class="no-bullets">
+		<li><label for="tag_as_keyword_yes"><?php $form->add_radio( 'tag_as_keyword', array( 'value' => 'yes', 'id' => 'tag_as_keyword_yes' ) ); ?> <?php _e( 'Enable automatic generation of META keywords for individual posts based upon the assigned tags. (default)', 'LION' ); ?></label></li>
+		<li><label for="tag_as_keyword_no"><?php $form->add_radio( 'tag_as_keyword', array( 'value' => 'no', 'id' => 'tag_as_keyword_no' ) ); ?> <?php _e( 'Do not automatically generate META keywords for individual posts.', 'LION' ); ?></label></li>
+	</ul>
+	<br />
+	
+	<p><?php printf( __( 'Allowing a search engine to <a href="%s">index</a> content on your site means that the content is searchable and that you would like search engines to send traffic to that location on your site. Since there are many views on a WordPress site that contain duplicate information (individual post views, post listings, etc) and duplicate content on your site can hurt your search rankings, Builder (by default) will only tell search engines to index the home page, blog posts, and pages.', 'LION' ), 'http://en.wikipedia.org/wiki/Index_(search_engine)' ); ?></p>
+	<p><?php _e( 'Depending on the configuration of your site, you may have unique content on your category archive pages. The following option allows you to control the indexing of category archives. Enabling category archive indexing without having a specific reason to do so is not recommended.', 'LION' ); ?></p>
+	<ul class="no-bullets">
+		<li><label for="cat_index_no"><?php $form->add_radio( 'cat_index', array( 'value' => 'no', 'id' => 'cat_index_no' ) ); ?> <?php _e( 'Disable category archive indexing (default)', 'LION' ); ?></label></li>
+		<li><label for="cat_index_yes"><?php $form->add_radio( 'cat_index', array( 'value' => 'no', 'id' => 'cat_index_yes' ) ); ?> <?php _e( 'Enable category archive indexing', 'LION' ); ?></label></li>
+	</ul>
+<?php
+			
+		}
+		
+		
+		// Helper Functions //////////////////////////////////////
+		
+	}
+}
+
+?>

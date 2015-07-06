@@ -1,0 +1,229 @@
+
+  
+    <h2>Table of <strong>Contents</strong></h2>
+    <ul>
+    <li><a href="#help1">Installation</a></li>
+    <li><a href="#help2">Support</a></li>
+    <li><a href="#help5">Frequently Asked Questions</a></li>
+    <li><a href="#help7">Known Problems</a></li>
+    <li><a href="#help9">Support Notes</a></li>
+    </ul>
+    
+    
+    
+    
+
+    <h2 id="help1">Installation <a href="#wrapper" class="top">Back to top</a></h2>
+    <p>To do a new installation of the plugin, please follow these steps:</p>
+    <ol>
+      <li>Download the zipped plugin file to your local machine.</li>
+      <li>Unzip the file.</li>
+      <li>Upload the <code>wp-lightbox</code> folder to the <code>/wp-content/plugins/</code> directory.</li>
+      <li>Activate the plugin through the 'Plugins' menu in WordPress.</li>
+      <li>Optionally, go to the "Lightbox Evolution" page under Settings tab and configure the options.</li>
+      <li>Go to your blog post or page and add a links to images.</li>
+      <li>If you would like to display a title for your image, simply add a title attribute to the link.</li>
+    </ol>
+    
+    <p>If you have already installed the plugin:</p>
+    <ol>
+      <li>De-activate the plugin.</li>
+      <li>Download the latest files.</li>
+      <li>Follow the new installation steps.</li>
+    </ol>
+
+
+
+    <h2 id="help2">Support <a href="#wpwrap" class="top">Back to top</a></h2>
+    <p>This plugin supports the following browsers:</p>
+    <ul>
+      <li>Internet Explorer 6+</li>
+      <li>Firefox 2 +</li>
+      <li>Safari 3 +</li>
+      <li>Chrome 3 +</li>
+      <li>Opera 9 +</li>
+    </ul>
+
+    <p>Quirks mode is not supported in any browser, but that doesn't necessarily mean that it won't work. This means that you need to use either a strict or transitional DOCTYPE in order to use Lightbox.</p>
+
+
+
+
+    <h2 id="help5">Frequently Asked Questions <a href="#wrapper" class="top">Back to top</a></h2>
+    <ol>
+      <li>
+        <strong>Can I use this script on my client's website?</strong>
+        <p>Yes. Your license includes the rights to use the script on any one website at a time. If you'd like to use the script as part of a service, please consider purchasing an Extended License.</p>
+      </li>
+      
+      
+      
+      <li>
+        <strong>Can I make modifications to this script?</strong>
+        <p>Feel free to make any modifications you need. Also feel free to blog about it and show your friends, but please do not redistribute the script with your changes. </p>
+      </li>
+      
+      
+      
+      
+      <li>
+        <strong>Why the plugin doesn't work?</strong>
+        <p>Make sure you don't have multiple versions of jquery in your page. Look at the source view in your browser to see what jscripts you are loading.</p>
+        <p>For example:</p>
+<pre>
+&lt;script src="crazy_path/<strong>jquery.js</strong>" type="text/javascript"&gt;&lt;/script&gt;
+...
+&lt;script src="crazy_path/<strong>jquery.min.js</strong>" type="text/javascript"&gt;&lt;/script&gt;
+...
+&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/<strong>jquery.min.js</strong>"&gt;&lt;/script&gt;
+</pre>
+        <p><strong>jquery.js</strong> and <strong>jquery.min.js</strong> are the same script. Delete the last one if you can. Keep only one.</p>
+        
+        <p>Also, please check that there is a <code>wp_head();</code> template tag in your theme header.php and there is a <code>wp_footer();</code> template tag in your theme footer.php.</p>
+        <p>Alternately you may have other plugins that conflict with Lightbox Evolution. Try disabling your other plugins and see if that helps. If it does, re-enable each plugin, one at a time to see which one is causing the conflict. Please let me know which plugin is causing the problem.</p>
+      </li>
+
+      <li>
+        <strong>Does the lightbox work with galleries?</strong>
+        <p>Yes it does. There are few simple requirements however. You you must set Link thumbnails to: Image File or use <code>[gallery link="file"]</code> for the gallery options. </p>
+      
+
+      <li>
+        <strong>The shadow overlay doesn't stretch to cover full browser window.</strong>
+        <p> Remove the default margin and padding from the body tag. Add body{ margin: 0; padding: 0; } to your stylesheet.</p>
+      </li>
+
+
+
+
+      <li>
+        <strong>How to automatically start Lightbox on page load?</strong>
+        <p>Add the code below in the footer.php of your theme just before <code>&lt;/body&gt;</code> tag:</p>
+      </li>
+
+<pre>
+&lt;script type="text/javascript"&gt;
+  jQuery(document).ready(function(){
+  
+    jQuery.lightbox("image.jpg");
+
+  });
+&lt;/script&gt;
+</pre>
+
+      <li>
+        <strong>Why Flash objects appear through overlay?</strong>
+        <p>By default Flash will overlay any HTML content. This can be prevented by setting the 'wmode' param and embed attribute to 'transparent'.</p>
+        <p>For more information from <a href="http://kb2.adobe.com/cps/155/tn_15523.html">Adobe Support</a></p>
+<pre>
+AC_FL_RunContent( 'codebase', 'http...', 'pluginspage', 'http...',  <strong>'wmode', 'transparent'</strong>, 'width', '99', 'height', '99', 'src', 'images/home', 'quality', 'high' );
+</pre>
+
+<pre>
+var so = new SWFObject("home.swf", "home", "99", "99", "9", "#222222");
+so.addParam("allowfullscreen", "true");
+so.addParam("allowScriptAccess", "always");
+<strong>so.addParam("wmode","transparent");</strong>
+</pre>
+
+<pre>
+&lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http..." width="999" height="999"&gt;
+  &lt;param name="movie"   value="images/home.swf" /&gt;
+  &lt;param name="quality" value="high" /&gt;
+  <strong>&lt;param name="wmode"   value="transparent" /&gt;</strong>
+  &lt;embed src="images/home.swf" <strong>wmode="transparent"</strong> width="999" height="999" quality="high" pluginspage="http..." type="application/x-shockwave-flash"&gt;&lt;/embed&gt;
+&lt;/object&gt;
+</pre>
+
+      </li>
+
+
+
+
+      <li>
+        <strong>Lightbox is positioned incorrectly or behaving strangely in Internet Explorer</strong>
+        <p>This is likely a doctype issue. This plugin requires a valid doctype and rendering in quirks mode is not supported.
+         Make sure you are using the full doctype declaration to insure rendering in standards mode.</p>
+         
+         <p>This abbreviated doctype renders the document in quirks mode for Internet Explorer:</p>
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;
+</pre>
+       <p>The doctype with URI renders in standards mode for all browsers:</p>
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+</pre>
+      </li>
+      
+      
+      <li>
+        <strong>How can I open Lightbox from inside a Flash movie?</strong>
+        <p>In your Flash movie you need to use getURL to call your custom callback function, like so:</p>
+
+<pre>
+getURL("javascript:jQuery.lightbox('image.jpg')");
+</pre>
+
+      </li>
+
+      <li>
+        <strong>How can I open Lightbox in parent window from inside an iframe?</strong>
+        <p>First thing you need to do is install the script in your parent window, but don't initialize it. Don't use jQuery(document).ready, instead, add the code below:</p>
+<pre>
+&lt;script type="text/javascript"&gt;
+  function frameload(iframe) {
+    var doc = iframe.contentWindow || iframe.contentDocument;
+    if (doc.document) { doc = doc.document; };
+    
+    jQuery('.lightbox', doc.body).lightbox();
+  };
+&lt;/script&gt;
+</pre>
+        <p>Insert <strong>onload="frameload(this);"</strong> in your iframe markup.</p>
+
+<pre>
+&lt;<strong>iframe</strong> src="iframe_child.html" <strong>onload="frameload(this);"</strong> width="500" height="500"&gt;&lt;/iframe&gt;     
+</pre>
+        <p>When you click an image in the child page, the lightbox will be displayed in your parent page. Remember to remove the script in your child page to avoid any problem.</p>
+        
+      </li>
+
+      <li>
+        <strong>How can I configure the lightbox to work with NextGEN Gallery plugin?</strong>
+        <p>Go to <code>Gallery &gt; Options &gt; Effects</code>, select <strong>Custom</strong> and paste the code below:</p>
+        <pre>class="lightbox" rel="%GALLERY_NAME%"</pre>
+      </li>
+
+    </ol>
+
+
+
+
+    <h2 id="help7">Known Problems <a href="#wrapper" class="top">Back to top</a></h2>
+    <ol>
+      <li>
+        <strong>No support for iPad</strong> (if someone wants to donate an iPad to me I'll guarantee support)
+      </li>
+      <li>In some instances performance may be slow in IE - this may be due to plugin conflicts or slow JavaScript performance in IE.</li>
+    </ol>
+
+
+
+
+
+
+    <h2 id="help9">Support Notes <a href="#wpwrap" class="top">Back to top</a></h2>
+
+    <p>To be able to help solve a problem quickly, please read the entries below. I'll do my best to assist you. I provide a full range of Support except:</p>
+    <ol>
+      <li>I don't (and can't) support the 3rd-party code (i.e. external plugins, javascripts, flash players, etc.) In such cases you shall have to contact the authors.</li>
+      <li>I don't support errors provoked by the strong modification of the original packages.</li>
+      <li>I don't customize the packages in personal way.</li>
+      <li>If you sure that your improvement ideas will be helpful to others, please don't hesitate to share it with me. Most likely that it will became a free package update.</li>
+    </ol>
+    <p>If you have a more general question relating to scripts on CodeCanyon, you might consider visiting the <a href="http://codecanyon.net/forums/topic/codecanyon/65">forums</a> and asking your question in the "Item Discussion" section. Once again, thank you so much for purchasing this plugin.</p>
+
+    <div class="alert">
+      <p><a href="http://codecanyon.net/user/aeroalquimia">aeroalquimia</a> (Eduardo Daniel Sada)<br/>
+      <strong>Buenos Aires, Argentina.</strong> Jul 2010</p>
+    </div>

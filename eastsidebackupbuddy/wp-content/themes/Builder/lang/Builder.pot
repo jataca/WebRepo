@@ -1,0 +1,3202 @@
+# Translation of Builder 3.1.1 by iThemes.
+# Copyright (C) 2011 iThemes
+# This file is distributed under the same license as the Builder package.
+# Chris Jean <support@ithemes.com>, 2011.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Builder 3.1.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/Builder\n"
+"POT-Creation-Date: 2011-08-04 12:53-0500\n"
+"PO-Revision-Date: 2011-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Chris Jean <support@ithemes.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: archive.php:14 archive.php:17 archive.php:20 archive.php:23 archive.php:26
+#: archive.php:29 legacy-templates/archive.php:12
+#: legacy-templates/archive.php:15 legacy-templates/archive.php:18
+#: legacy-templates/archive.php:21 legacy-templates/archive.php:24
+#: legacy-templates/archive.php:27
+#, php-format
+msgid "Archive for %s"
+msgstr ""
+
+#: archive.php:32 legacy-templates/archive.php:30
+#, php-format
+msgid "Author Archive for %s"
+msgstr ""
+
+#: archive.php:35 legacy-templates/archive.php:33
+msgid "Archive"
+msgstr ""
+
+#: archive.php:58 index.php:22 legacy-templates/archive.php:56
+#: legacy-templates/index.php:20 legacy-templates/search.php:31
+#: legacy-templates/single.php:18 search.php:35 single.php:19
+#, php-format
+msgid "By %s"
+msgstr ""
+
+#: archive.php:59 archive.php:77 index.php:23 index.php:41
+#: legacy-templates/archive.php:57 legacy-templates/archive.php:75
+#: legacy-templates/index.php:21 legacy-templates/index.php:39
+#: legacy-templates/search.php:32 legacy-templates/search.php:53 search.php:36
+#: search.php:57
+#, php-format
+msgid "Comments %s"
+msgstr ""
+
+#: archive.php:59 archive.php:77 index.php:23 index.php:41
+#: legacy-templates/archive.php:57 legacy-templates/archive.php:75
+#: legacy-templates/index.php:21 legacy-templates/index.php:39
+#: legacy-templates/search.php:32 legacy-templates/search.php:53 search.php:36
+#: search.php:57
+msgid "(0)"
+msgstr ""
+
+#: archive.php:59 archive.php:77 index.php:23 index.php:41
+#: legacy-templates/archive.php:57 legacy-templates/archive.php:75
+#: legacy-templates/index.php:21 legacy-templates/index.php:39
+#: legacy-templates/search.php:32 legacy-templates/search.php:53 search.php:36
+#: search.php:57
+msgid "(1)"
+msgstr ""
+
+#: archive.php:59 archive.php:77 index.php:23 index.php:41
+#: legacy-templates/archive.php:57 legacy-templates/archive.php:75
+#: legacy-templates/index.php:21 legacy-templates/index.php:39
+#: legacy-templates/search.php:32 legacy-templates/search.php:53 search.php:36
+#: search.php:57
+msgid "(%)"
+msgstr ""
+
+#: archive.php:72 index.php:36 legacy-templates/archive.php:70
+#: legacy-templates/index.php:34
+msgid "Read More&rarr;"
+msgstr ""
+
+#: archive.php:79 index.php:43 legacy-templates/archive.php:77
+#: legacy-templates/index.php:41 legacy-templates/search.php:55
+#: legacy-templates/single.php:39 search.php:59 single.php:41
+#, php-format
+msgid "Categories : %s"
+msgstr ""
+
+#: archive.php:80 index.php:44 legacy-templates/archive.php:78
+#: legacy-templates/index.php:42 legacy-templates/search.php:56
+#: legacy-templates/single.php:40 search.php:60 single.php:42
+msgid "Tags : "
+msgstr ""
+
+#: archive.php:93 extensions/slider/functions.php:127 index.php:57
+#: legacy-templates/archive.php:89 legacy-templates/index.php:53
+#: legacy-templates/page.php:32 legacy-templates/page_sitemap.php:55
+#: legacy-templates/search.php:68 legacy-templates/single.php:51 search.php:83
+#: single.php:54
+msgid "&laquo; Previous Page"
+msgstr ""
+
+#: archive.php:94 extensions/slider/functions.php:128 index.php:58
+#: legacy-templates/archive.php:90 legacy-templates/index.php:54
+#: legacy-templates/page.php:33 legacy-templates/page_sitemap.php:56
+#: legacy-templates/search.php:69 legacy-templates/single.php:52 search.php:84
+#: single.php:55
+msgid "Next Page &raquo;"
+msgstr ""
+
+#: comments.php:22 lib/theme-settings/defaults.php:81
+msgid "Comments"
+msgstr ""
+
+#: comments.php:40
+msgid "Leave a Reply"
+msgstr ""
+
+#: comments.php:40
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: comments.php:47
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: comments.php:52
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+
+#: comments.php:56 lib/import-export/settings-tab.php:176
+#: lib/import-export/settings-tab.php:336
+#: lib/import-export/settings-tab.php:486 lib/layout-engine/editor.php:1874
+#: lib/layout-engine/modules/class.module.php:232
+msgid "Name"
+msgstr ""
+
+#: comments.php:56 comments.php:61
+msgid "<span class='required'>(required)</span>"
+msgstr ""
+
+#: comments.php:61
+msgid "Mail (will not be published)"
+msgstr ""
+
+#: comments.php:66
+msgid "Website"
+msgstr ""
+
+#: comments.php:74
+msgid "Submit Comment"
+msgstr ""
+
+#: comments.php:84
+msgid "Comments are closed."
+msgstr ""
+
+#: extensions/magazine/functions.php:40
+#: extensions/post-teasers-left/functions.php:42
+#: extensions/post-teasers-right/functions.php:42
+#: extensions/slider/functions.php:118
+#, php-format
+msgid "%s Comments"
+msgstr ""
+
+#: extensions/magazine/functions.php:40
+#: extensions/post-teasers-left/functions.php:42
+#: extensions/post-teasers-right/functions.php:42
+#: extensions/slider/functions.php:118
+msgid "0"
+msgstr ""
+
+#: extensions/magazine/functions.php:40
+#: extensions/post-teasers-left/functions.php:42
+#: extensions/post-teasers-right/functions.php:42
+#: extensions/slider/functions.php:118
+msgid "1"
+msgstr ""
+
+#: extensions/magazine/functions.php:40
+#: extensions/post-teasers-left/functions.php:42
+#: extensions/post-teasers-right/functions.php:42
+#: extensions/slider/functions.php:118
+msgid "%"
+msgstr ""
+
+#: footer.php:9
+#, php-format
+msgid "%1$s by %2$s<br />Powered by %3$s"
+msgstr ""
+
+#: footer.php:15
+#, php-format
+msgid "Copyright &copy; %s All Rights Reserved"
+msgstr ""
+
+#: image.php:42 legacy-templates/image.php:43
+msgid "Image Data"
+msgstr ""
+
+#: image.php:59 legacy-templates/image.php:60
+msgid "Camera"
+msgstr ""
+
+#: image.php:60 legacy-templates/image.php:61
+msgid "Date Taken"
+msgstr ""
+
+#: image.php:61 legacy-templates/image.php:62
+msgid "Aperture"
+msgstr ""
+
+#: image.php:62 legacy-templates/image.php:63
+msgid "Focal Length"
+msgstr ""
+
+#: image.php:63 legacy-templates/image.php:64
+msgid "ISO"
+msgstr ""
+
+#: image.php:64 legacy-templates/image.php:65
+msgid "Shutter Speed"
+msgstr ""
+
+#: image.php:65 legacy-templates/image.php:66
+msgid "Credit"
+msgstr ""
+
+#: image.php:66 legacy-templates/image.php:67
+msgid "Copyright"
+msgstr ""
+
+#: image.php:67 legacy-templates/image.php:68
+msgid "Title"
+msgstr ""
+
+#: image.php:73 legacy-templates/image.php:74
+msgid "Dimensions"
+msgstr ""
+
+#: legacy-templates/not_found.php:3 not_found.php:5
+msgid "Page Not Found"
+msgstr ""
+
+#: legacy-templates/not_found.php:6 not_found.php:9
+msgid "We're sorry, but the page you are looking for isn't here."
+msgstr ""
+
+#: legacy-templates/not_found.php:7 not_found.php:10
+msgid ""
+"Try searching for the page you are looking for or using the navigation in "
+"the header or sidebar"
+msgstr ""
+
+#: legacy-templates/page.php:21 legacy-templates/single.php:32 page.php:24
+#: single.php:37
+msgid "Pages:"
+msgstr ""
+
+#: legacy-templates/page.php:22 legacy-templates/single.php:33 page.php:25
+#: single.php:38
+msgid "Edit this entry."
+msgstr ""
+
+#: legacy-templates/page_sitemap.php:27 lib/layout-engine/editor.php:1006
+#: page_sitemap.php:27
+msgid "Pages"
+msgstr ""
+
+#: legacy-templates/page_sitemap.php:32 page_sitemap.php:32
+msgid "Recent Blog Posts"
+msgstr ""
+
+#: legacy-templates/page_sitemap.php:37 page_sitemap.php:37
+msgid "Posts by Month"
+msgstr ""
+
+#: legacy-templates/page_sitemap.php:42 page_sitemap.php:42
+msgid "Posts by Categories"
+msgstr ""
+
+#: legacy-templates/search.php:8 search.php:11
+#, php-format
+msgid "Search Results for \"<em>%s</em>\""
+msgstr ""
+
+#: legacy-templates/search.php:72 search.php:72
+msgid "No results found."
+msgstr ""
+
+#: lib/billboard/billboard.php:296 lib/classes/it-core-class.php:212
+msgid "Cheatin&#8217; uh?"
+msgstr ""
+
+#: lib/billboard/billboard.php:409 lib/billboard/billboard.php:627
+#: lib/billboard/billboard.php:887 lib/billboard/billboard.php:1021
+msgid "error"
+msgid_plural "errors"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/billboard/billboard.php:560
+msgid "entry"
+msgid_plural "entries"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/billboard/billboard.php:976
+msgid "Group"
+msgid_plural "Groups"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/billboard/lib/file-utility/file-utility.php:162
+#: lib/billboard/lib/file-utility/file-utility.php:166
+#: lib/billboard/lib/file-utility/file-utility.php:172
+#: lib/classes/it-file-utility.php:264 lib/classes/it-file-utility.php:268
+#: lib/classes/it-file-utility.php:274
+msgid "Resize path invalid"
+msgstr ""
+
+#: lib/import-export/class.builder-data-source.php:46
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:89
+#, php-format
+msgid ""
+"<strong>Replace:</strong> Delete the %1$s from this site and replace with "
+"the %1$s in the export file."
+msgstr ""
+
+#: lib/import-export/class.builder-data-source.php:47
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:90
+#, php-format
+msgid ""
+"<strong>Skip:</strong> Do not import %1$s from the export file. The site's %1"
+"$s will remain unchanged."
+msgstr ""
+
+#: lib/import-export/class.builder-import-export.php:225
+#: lib/import-export/class.builder-import-export.php:377
+msgid ""
+"The plugin or component that this data is for is not present on this site. "
+"This data will not be imported."
+msgstr ""
+
+#: lib/import-export/class.builder-import-export.php:349
+#, php-format
+msgid "The %1$s data from the export file will not be imported to the site."
+msgstr ""
+
+#: lib/import-export/class.builder-import-export.php:368
+#, php-format
+msgid ""
+"The %1$s data on the site will be removed and replaced with the %1$s data "
+"from the export file."
+msgstr ""
+
+#: lib/import-export/class.builder-import-export.php:370
+msgid "The data will be imported as selected."
+msgstr ""
+
+#: lib/import-export/class.builder-import-export.php:502
+msgid "Unable to find requested export file"
+msgstr ""
+
+#: lib/import-export/class.builder-import-export.php:522
+msgid ""
+"The uploaded file is not a valid Builder export file. It cannot be imported."
+msgstr ""
+
+#: lib/import-export/init.php:18
+msgid "Import / Export"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:60
+msgid "Site Exports"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:61
+msgid "Export Data"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:62
+msgid "Import Data"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:75
+msgid ""
+"The tools offered here allow you to export settings from or import settings "
+"into your Builder theme. This is helpful for transferring specific settings, "
+"including Layouts, from one Builder site to another Builder site."
+msgstr ""
+
+#: lib/import-export/settings-tab.php:76
+msgid ""
+"Exports can also be used as a basic backup. Create a full export once you "
+"have your Builder theme configured the way you want it, save the export to "
+"your computer, and if you mess up your Layouts at a later time, you can "
+"import the Layouts as you originally had them."
+msgstr ""
+
+#: lib/import-export/settings-tab.php:77
+msgid ""
+"The Site Exports section lists all your current exports. Each time you "
+"create an export or import an export file, the export will be listed in the "
+"Site Exports section. This allows you to easily keep track of the exports "
+"and download them as needed. You can also select to import a listed export. "
+"This can be helpful to quickly replace Layouts that have been accidentally "
+"modified or removed."
+msgstr ""
+
+#: lib/import-export/settings-tab.php:78
+msgid "The Export Data section allows you to quickly generate an export."
+msgstr ""
+
+#: lib/import-export/settings-tab.php:79
+msgid ""
+"The Import Data section allows you to import an export that you previously "
+"download from this or another site. Once you select the export file and "
+"click the Import button, you will be given a series of options that help you "
+"import the settings as desired."
+msgstr ""
+
+#: lib/import-export/settings-tab.php:80
+msgid ""
+"<strong>Note:</strong> The exports created here will only include settings "
+"specific to Builder. No WordPress settings, WordPress content, or data from "
+"other themes or plugins will be included."
+msgstr ""
+
+#: lib/import-export/settings-tab.php:110
+#, php-format
+msgid "Successfully imported &quot;%s&quot;"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:115
+#, php-format
+msgid "Problem occurred when importing %1$s. Error code: %2$s"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:132 lib/theme-settings/tab-basic.php:217
+msgid ""
+"For information about this page, please click the \"Help\" button at the top "
+"right."
+msgstr ""
+
+#: lib/import-export/settings-tab.php:156
+#, php-format
+msgid "Created export: %s"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:160
+#, php-format
+msgid "%d exports deleted."
+msgstr ""
+
+#: lib/import-export/settings-tab.php:162
+msgid "Export deleted."
+msgstr ""
+
+#: lib/import-export/settings-tab.php:167
+msgid ""
+"The following listing shows export files created on this site or imported "
+"from another site. These exports can be imported into this site (in order to "
+"revert changes made to the site's settings) or can be downloaded for "
+"importing into another site."
+msgstr ""
+
+#: lib/import-export/settings-tab.php:171
+#, php-format
+msgid ""
+"No exports have been created on or imported. Please use either the <a href="
+"\"%1$s\">Export Data</a> or <a href=\"%2$s\">Import Data</a> options to load "
+"data."
+msgstr ""
+
+#: lib/import-export/settings-tab.php:177
+msgid "Export Date and Time"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:178
+msgid "The types of data contained inside the export."
+msgstr ""
+
+#: lib/import-export/settings-tab.php:178
+msgid "Contents"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:179
+msgid "This is the version of Builder that created the export."
+msgstr ""
+
+#: lib/import-export/settings-tab.php:179
+#: lib/import-export/settings-tab.php:339
+#: lib/import-export/settings-tab.php:489
+msgid "Builder Version"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:180
+msgid "This is the site that created the export."
+msgstr ""
+
+#: lib/import-export/settings-tab.php:180
+msgid "Source Site"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:181
+msgid "This is the user who created the export."
+msgstr ""
+
+#: lib/import-export/settings-tab.php:181
+#: lib/import-export/settings-tab.php:338
+#: lib/import-export/settings-tab.php:488
+msgid "Exported By"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:182
+msgid "Download"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:191
+#: lib/import-export/settings-tab.php:246
+msgid "Bulk Actions"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:191
+#: lib/import-export/settings-tab.php:230
+#: lib/import-export/settings-tab.php:246 lib/layout-engine/editor.php:615
+#: lib/layout-engine/editor.php:699 lib/layout-engine/editor.php:1032
+msgid "Delete"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:192
+#: lib/import-export/settings-tab.php:247
+msgid "Apply"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:226
+#: lib/import-export/settings-tab.php:229
+#, php-format
+msgid "Import data from %s"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:229
+msgid "Import"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:275
+msgid ""
+"A Builder export file can be used to easily migrate settings, layouts, and "
+"views to another site. For example, transferring settings from a development "
+"site to a production site. Export files can also be used as very basic "
+"backups of Builder settings."
+msgstr ""
+
+#: lib/import-export/settings-tab.php:278
+msgid "Create a name for this export:"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:283
+msgid "Select what the export file should contain:"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:306
+msgid ""
+"Importing a Builder export file allows you to apply/add some or all of the "
+"export data to the site. Importing the data also also adds the uploaded "
+"export file to the list of Site Exports for use later."
+msgstr ""
+
+#: lib/import-export/settings-tab.php:309
+msgid "Select export file to import:"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:337
+#: lib/import-export/settings-tab.php:487
+msgid "Date and Time"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:340
+#: lib/import-export/settings-tab.php:490
+msgid "Site Address"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:351
+#: lib/import-export/settings-tab.php:501
+msgid "Selected export file details:"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:370
+msgid ""
+"Use the following options to select how to import each type of data "
+"contained in the export:"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:376
+#: lib/import-export/settings-tab.php:420
+#: lib/import-export/settings-tab.php:464
+msgid "Next Step"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:377
+#: lib/import-export/settings-tab.php:421
+#: lib/import-export/settings-tab.php:465
+#: lib/import-export/settings-tab.php:527 lib/layout-engine/editor.php:567
+#: lib/layout-engine/editor.php:616 lib/layout-engine/editor.php:833
+#: lib/layout-engine/editor.php:884 lib/layout-engine/editor.php:942
+#: lib/layout-engine/editor.php:1148 lib/layout-engine/editor.php:1474
+#: lib/layout-engine/editor.php:1934
+msgid "Cancel"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:414
+msgid ""
+"The following options allow you to customize how certain types of data are "
+"imported into the site. Any conflicts that may occur can be resolved in the "
+"next screen."
+msgstr ""
+
+#: lib/import-export/settings-tab.php:520
+msgid "The data will be imported with the following settings:"
+msgstr ""
+
+#: lib/import-export/settings-tab.php:526
+msgid "Run Import"
+msgstr ""
+
+#: lib/layout-engine/add_layout_screen_options.php:25
+#: lib/layout-engine/editor.php:1450 lib/layout-engine/editor.php:1564
+#: lib/layout-engine/editor.php:1574
+msgid "Layout"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:28
+msgctxt "view"
+msgid "Home"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:30
+msgid "The front page or home of your site"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:33
+msgctxt "view"
+msgid "Singular"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:35
+msgid "Any post, page, or attachment"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:38 lib/layout-engine/editor.php:593
+msgctxt "view"
+msgid "Post"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:40
+msgid "Any post"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:43 lib/layout-engine/editor.php:593
+msgctxt "view"
+msgid "Page"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:45
+msgid "Any page"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:48
+msgctxt "view"
+msgid "Attachment"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:50
+msgid "Any attachment (image or other attached file)"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:53
+msgctxt "view"
+msgid "Archives"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:55
+msgid "Any archive view (category, tag, author, or date)"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:58
+msgctxt "view"
+msgid "Category"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:60
+msgid "Any category archive view"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:63
+msgctxt "view"
+msgid "Tag"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:65
+msgid "Any tag archive view"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:68
+msgctxt "view"
+msgid "Author"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:70
+msgid "Any author archive view"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:73
+msgctxt "view"
+msgid "Date Archive"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:75
+msgid "Any date-specific view (such as year, month, or day)"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:78
+msgctxt "view"
+msgid "Search"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:80
+msgid "A search result page"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:83
+msgctxt "view"
+msgid "404"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:85
+msgid "The \"Page Not Found\" error page"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:98
+msgctxt "view"
+msgid "Blog"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:100
+msgid ""
+"This view is for when a static page is used as the front (or home) page and "
+"you want to apply a specific layout to the selected posts page"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:113
+#, php-format
+msgctxt "view"
+msgid "Post Type - %s"
+msgstr ""
+
+#: lib/layout-engine/available-views.php:115
+#, php-format
+msgctxt "view description"
+msgid "Any %s entry"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:87
+msgid ""
+"<strong>Add Layouts:</strong> Add the Layouts from this export to this "
+"site's existing Layouts. The Views in this export will not be imported to "
+"this site."
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:88
+#, php-format
+msgid "<strong>Custom:</strong> Selectively choose how to import the %s."
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:111
+msgid "Select Layouts from the Import File to Add to Site"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:113
+msgid ""
+"Checking a layout below will add that layout from the import file to the "
+"site."
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:130
+msgid "Select Layouts from the Site to Keep"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:132
+msgid "Unchecking one of the following layouts will remove it from the site."
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:152
+msgid "Select Views from the Import File to Add to Site"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:154
+msgid ""
+"Checking a view below will add that view from the import file to the site."
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:169
+#, php-format
+msgid "<strong>%1$s</strong> uses the export file's &quot;%2$s&quot; layout"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:172
+#, php-format
+msgid ""
+"<span style=\"color:red;\">%s</span> &mdash; This view does not exist on the "
+"site."
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:183
+msgid "Select Views from the Site to Keep"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:185
+msgid "Unchecking one of the following views will remove it from the site."
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:200
+#, php-format
+msgid "<strong>%1$s</strong> uses the site's &quot;%2$s&quot; layout"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:204
+msgid "This View is broken and cannot be imported."
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:231
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:236
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:297
+msgid "Invalid view"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:474
+msgid "Layout Name"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:475
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:476
+msgid "Layout Width"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:477
+#: lib/layout-engine/editor.php:1003 lib/layout-engine/editor.php:1457
+#: lib/layout-engine/editor.php:1566 lib/layout-engine/editor.php:1576
+#: lib/layout-engine/editor.php:1894
+msgid "Extension"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:478
+msgid "Extension Style"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:479
+msgid "Modules"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:545
+#, php-format
+msgid "Resolve Layout &quot;%s&quot; Conflicts"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:559
+#, php-format
+msgid ""
+"This Layout is a duplicate of the &quot;%s&quot; Layout that is currently on "
+"the site. All the settings are identical including the Layout's ID. Since "
+"each Layout must have a unique ID, please select an option to resolve this "
+"conflict."
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:570
+#, php-format
+msgid ""
+"This Layout is a duplicate of the &quot;%1$s&quot; Layout that is currently "
+"on the site. This means that both Layouts have the same ID and originated "
+"from the same Builder site. While these Layouts share the same IDs and a "
+"common origin, the %2$s for each do not match. Since each Layout must have a "
+"unique ID, please select an option to resolve this conflict."
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:580
+msgid "<strong>New ID:</strong> Create a new ID for the Layout being imported."
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:581
+#, php-format
+msgid ""
+"<strong>Replace:</strong> Remove this site's &quot;%s&quot; Layout and "
+"replace it with this one for the import."
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:582
+msgid "<strong>Skip:</strong> Do not import this Layout."
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:590
+msgid ""
+"A Layout on the site already has a Layout with this name. Please choose a "
+"new name for this Layout."
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:606
+msgid "New Name:"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:641
+#, php-format
+msgid "Resolve View &quot;%s&quot; Conflicts"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:656
+#, php-format
+msgid ""
+"Both the site and the export data have a layout set for this View. The site "
+"uses the site's &quot;%1$s&quot; layout for this View. The export data uses "
+"the export's &quot;%2$s&quot; layout for this View. Please use the drop-down "
+"below to select what layout this view should use."
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:665
+msgid "Select a Layout for this View:"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:685
+msgid "Select the Default Layout"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:687
+msgid ""
+"The Default Layout is used for all views that do not have a specific layout "
+"set. You can use the drop-down below to select which Layout you want to use "
+"as the Default Layout."
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:688
+#, php-format
+msgid ""
+"Note: The current site Default Layout is the site's &quot;%1$s&quot; Layout "
+"and the export data Default Layout is the export data's &quot;%2$s&quot; "
+"Layout."
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:701
+msgid "Select a Default Layout:"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:927
+msgid "Keeping Site Layouts"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:929
+msgid "The following Layouts on the site will be kept:"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:940
+msgid "Importing Layouts"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:942
+msgid "The following Layouts from the export file will be imported:"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:949
+#, php-format
+msgid "(renamed from &quot;%s&quot;)"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:959
+msgid "Removing Site Layouts"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:961
+msgid "The following Layouts on the site will be removed:"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:990
+msgid "Final View Settings"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:992
+msgid "The site will use the following Views:"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:1001
+#, php-format
+msgid "<strong>%1$s</strong> uses the &quot;%2$s&quot; layout"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:1010
+#: lib/layout-engine/editor.php:1000
+msgid "Default Layout"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:1036
+msgid "Name:"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:1037
+msgid "Width:"
+msgstr ""
+
+#: lib/layout-engine/class.builder-data-source-layouts-views.php:1038
+msgid "Modules:"
+msgstr ""
+
+#: lib/layout-engine/editor.php:70
+msgctxt "page title"
+msgid "Manage Layouts and Views"
+msgstr ""
+
+#: lib/layout-engine/editor.php:71
+msgctxt "menu title"
+msgid "Layouts and Views"
+msgstr ""
+
+#: lib/layout-engine/editor.php:88 lib/layout-engine/editor.php:1301
+msgid "Layouts"
+msgstr ""
+
+#: lib/layout-engine/editor.php:89 lib/layout-engine/editor.php:1008
+msgid "Views"
+msgstr ""
+
+#: lib/layout-engine/editor.php:105 lib/layout-engine/editor.php:118
+msgid ""
+"Layouts are at the heart of how Builder gives you more control over your "
+"site. The goal is to allow you to create a site structure that meet your "
+"needs and the needs of your site rather than forcing you to structure your "
+"site to fit the mold of a specific theme."
+msgstr ""
+
+#: lib/layout-engine/editor.php:106
+msgid ""
+"This editor allows you to create and modify Layouts for your site. There are "
+"a number of options, but most users will only use the following three "
+"regularly: Name, Width, and the Design section."
+msgstr ""
+
+#: lib/layout-engine/editor.php:107
+msgid ""
+"The Name is just an easy way to keep track of a specific Layout and is also "
+"used as the base of the name for a Layout's Widget areas."
+msgstr ""
+
+#: lib/layout-engine/editor.php:108
+msgid ""
+"The Width sets how wide the layout is. Since this is a Layout option, you "
+"can have Layouts of various widths used for different parts of your site."
+msgstr ""
+
+#: lib/layout-engine/editor.php:109
+msgid ""
+"Extensions can modify how a layout functions and what the layout looks like. "
+"They are like mini-themes in that they can have style.css and functions.php "
+"files."
+msgstr ""
+
+#: lib/layout-engine/editor.php:110
+#, php-format
+msgid ""
+"Using the Hide Widget Areas options allow for showing or hiding a Layout's "
+"widget areas from WordPress' <a href=\"%s\">Widgets editor</a>. Since a "
+"Builder site can have a very large number of widget areas, hiding select "
+"Layout's widget areas can make managing widgets much easier. This option can "
+"also be toggled from the main Layout listing by hovering over a Layout's row "
+"and selecting either \"Show widget areas\" or \"Hide widget areas\"."
+msgstr ""
+
+#: lib/layout-engine/editor.php:111
+msgid ""
+"The Design area of this editor is where you assemble your layout using "
+"Modules. Each Module represents a different part of a layout. The Navigation "
+"Module adds a navigation menu. The Content Module holds the main content of "
+"that view, such as a listing of posts for the home page or page content if "
+"you are viewing a specific page. Clicking the \"Add Module\" link in the "
+"Design area shows the available modules and describes what they add to your "
+"Layout. By assembling a mix of desired Modules, you can quickly build a "
+"Layout for your site."
+msgstr ""
+
+#: lib/layout-engine/editor.php:119
+msgid ""
+"For details about what a Layout is and how it is put together, click the "
+"\"Create Layout\" button below to create a new Layout from scratch or click "
+"the \"Edit\" link for a specific Layout and view the \"Help\" area from "
+"within the Layout editor."
+msgstr ""
+
+#: lib/layout-engine/editor.php:120
+msgid ""
+"To create a new Layout, click one the \"Create Layout\" buttons below. As "
+"you hover over a Layout's row, additional options become visible. These "
+"additional options allow you to Edit, Duplicate, or Delete a Layout. They "
+"also offer options to set a Layout as the Default Layout and to show or hide "
+"widget areas."
+msgstr ""
+
+#: lib/layout-engine/editor.php:121
+msgid ""
+"When you duplicate a Layout, the new Layout will have all the same settings "
+"and Modules as the original Layout. This is a quick way of making Layouts "
+"that are a slight modification of an existing Layout. Simply duplicate the "
+"Layout, modify the new Layout, and make the needed modifications."
+msgstr ""
+
+#: lib/layout-engine/editor.php:122
+#, php-format
+msgid ""
+"Since Builder's Layouts can create a very large number of Widget areas very "
+"quickly, there is the ability to show or hide a Layout's Widget areas from "
+"the <a href=\"%s\">Widgets editor</a>. A good workflow is to hide all "
+"Layouts' Widget areas except the Layout you are currently configuring. This "
+"makes managing the Widget areas much easier. To show or hide a Layout's "
+"Widget areas, simply hover over the Layout's row and select the \"Show "
+"Widget areas\" or \"Hide Widget areas\" link."
+msgstr ""
+
+#: lib/layout-engine/editor.php:123
+msgid ""
+"Views is another very important aspect to Builder. Make sure to click the "
+"\"Views\" tab below and learn about what Views can do for you and your site."
+msgstr ""
+
+#: lib/layout-engine/editor.php:131
+msgid ""
+"Views allow you to harness the true power of Builder's Layouts. By using "
+"Views, you can have one Layout show on just your Home page and another "
+"Layout show on all pages. Simply click the \"Add View\" button below, select "
+"the desired View and Layout, and click the \"Add\" button to start using "
+"Views."
+msgstr ""
+
+#: lib/layout-engine/editor.php:132
+msgid ""
+"The default Layout is used on all Views that do not have a specific Layout "
+"selected. You can set the default Layout by going to the Layouts tab, "
+"hovering over the layout you wish to set as the default Layout, and clicking "
+"the \"Set as default\" link."
+msgstr ""
+
+#: lib/layout-engine/editor.php:133
+msgid ""
+"You can also set a Layout to be used for specific posts and pages by "
+"selecting the desired Layout from the \"Custom Layout\" box found in the "
+"editor for posts and pages. The \"Custom Layout\" box is typically found on "
+"the right side of the editor underneath the \"Featured Image\" box."
+msgstr ""
+
+#: lib/layout-engine/editor.php:274
+#, php-format
+msgid ""
+"Widget areas for %s are now hidden from the <a href=\"widgets.php\">Widgets "
+"editor</a>."
+msgstr ""
+
+#: lib/layout-engine/editor.php:276
+msgid ""
+"Widget areas for the requested Layouts are now hidden from the <a href="
+"\"widgets.php\">Widgets editor</a>."
+msgstr ""
+
+#: lib/layout-engine/editor.php:281 lib/layout-engine/editor.php:318
+msgid "Unable to find the requested layout."
+msgstr ""
+
+#: lib/layout-engine/editor.php:311
+#, php-format
+msgid ""
+"Widget areas for %s now appear in the <a href=\"widgets.php\">Widgets "
+"editor</a>."
+msgstr ""
+
+#: lib/layout-engine/editor.php:313
+msgid ""
+"Widget areas for the requested Layouts now appear in the <a href=\"widgets."
+"php\">Widgets editor</a>."
+msgstr ""
+
+#: lib/layout-engine/editor.php:332 lib/theme-settings/editor.php:123
+msgid "Data reset"
+msgstr ""
+
+#: lib/layout-engine/editor.php:358
+#, php-format
+msgid "Modify %s Module Settings"
+msgstr ""
+
+#: lib/layout-engine/editor.php:472
+#, php-format
+msgid ""
+"The %s Layout is both the Default Layout and has Views relying on it. It "
+"will need to be manually deleted."
+msgstr ""
+
+#: lib/layout-engine/editor.php:474
+#, php-format
+msgid ""
+"The %s Layout has Views relying on it. It will need to be manually deleted."
+msgstr ""
+
+#: lib/layout-engine/editor.php:476
+#, php-format
+msgid ""
+"The %s Layout is the Default Layout. It will need to be manually deleted."
+msgstr ""
+
+#: lib/layout-engine/editor.php:479
+msgid "You must select a replacement layout."
+msgstr ""
+
+#: lib/layout-engine/editor.php:486
+msgid ""
+"The replacement layout chosen is unavailable. Please select a different "
+"replacement layout."
+msgstr ""
+
+#: lib/layout-engine/editor.php:517
+msgid "The requested Layouts have been deleted."
+msgstr ""
+
+#: lib/layout-engine/editor.php:519
+#, php-format
+msgid "The %s Layout has been deleted."
+msgstr ""
+
+#: lib/layout-engine/editor.php:564
+msgid ""
+"There must be at least one layout. This layout can only be removed after "
+"adding additional layouts."
+msgstr ""
+
+#: lib/layout-engine/editor.php:591
+msgid "This layout is currently being used by:"
+msgstr ""
+
+#: lib/layout-engine/editor.php:593
+msgctxt "view"
+msgid "View"
+msgstr ""
+
+#: lib/layout-engine/editor.php:603
+msgid ""
+"This layout is the default layout. The selected replacement will be set as "
+"the new default."
+msgstr ""
+
+#: lib/layout-engine/editor.php:607
+msgid "Please select a layout to use as a replacement:"
+msgstr ""
+
+#: lib/layout-engine/editor.php:610
+#, php-format
+msgid ""
+"Please confirm that you would like to delete the <strong>%s</strong> layout."
+msgstr ""
+
+#: lib/layout-engine/editor.php:632
+msgid "You must supply a name for the duplicated layout."
+msgstr ""
+
+#: lib/layout-engine/editor.php:638
+msgid "A layout with that name already exists. Please enter a different name."
+msgstr ""
+
+#: lib/layout-engine/editor.php:660 lib/layout-engine/editor.php:862
+#: lib/layout-engine/editor.php:1037 lib/layout-engine/editor.php:1067
+#: lib/layout-engine/editor.php:1905
+#: lib/layout-engine/modules/class.module.php:362
+#: lib/layout-engine/modules/header/widget.php:77
+#: lib/layout-engine/modules/html/module.php:68
+msgid "Yes"
+msgstr ""
+
+#: lib/layout-engine/editor.php:661 lib/layout-engine/editor.php:1069
+msgid "Show this layout's widget areas in the Widgets editor"
+msgstr ""
+
+#: lib/layout-engine/editor.php:662 lib/layout-engine/editor.php:1069
+msgid "Show widget areas"
+msgstr ""
+
+#: lib/layout-engine/editor.php:666 lib/layout-engine/editor.php:1074
+msgid "Hide this layout's widget areas from the Widgets editor"
+msgstr ""
+
+#: lib/layout-engine/editor.php:667 lib/layout-engine/editor.php:1074
+msgid "Hide widget areas"
+msgstr ""
+
+#: lib/layout-engine/editor.php:674
+msgid "This layout does not use an Extension"
+msgstr ""
+
+#: lib/layout-engine/editor.php:681 lib/layout-engine/editor.php:1054
+#, php-format
+msgid "Uses only the %s extension for styling"
+msgstr ""
+
+#: lib/layout-engine/editor.php:685 lib/layout-engine/editor.php:1058
+#, php-format
+msgid "Uses the %s extension to modify the default theme styling"
+msgstr ""
+
+#: lib/layout-engine/editor.php:689
+msgid ""
+"The default layout is used for all views that don't have a specific view "
+"set. New layouts inherit the default layout's background options."
+msgstr ""
+
+#: lib/layout-engine/editor.php:691 lib/layout-engine/editor.php:1005
+#: lib/layout-engine/editor.php:1065
+msgid ""
+"Widget areas for layouts can be hidden from the Widgets editor to make "
+"management of widgets easier."
+msgstr ""
+
+#: lib/layout-engine/editor.php:692 lib/layout-engine/editor.php:1023
+#: lib/layout-engine/editor.php:1025
+msgid "Modify Layout Settings"
+msgstr ""
+
+#: lib/layout-engine/editor.php:693 lib/layout-engine/editor.php:1025
+#: lib/layout-engine/editor.php:1587 lib/layout-engine/editor.php:1633
+msgid "Edit"
+msgstr ""
+
+#: lib/layout-engine/editor.php:694 lib/layout-engine/editor.php:1028
+#: lib/layout-engine/layout-engine.php:132
+msgid "Manage Widgets for this Layout"
+msgstr ""
+
+#: lib/layout-engine/editor.php:695 lib/layout-engine/editor.php:1028
+msgid "Widgets"
+msgstr ""
+
+#: lib/layout-engine/editor.php:696 lib/layout-engine/editor.php:1031
+msgid "Duplicate Layout"
+msgstr ""
+
+#: lib/layout-engine/editor.php:697 lib/layout-engine/editor.php:1031
+msgid "Duplicate"
+msgstr ""
+
+#: lib/layout-engine/editor.php:698 lib/layout-engine/editor.php:1032
+msgid "Delete Layout"
+msgstr ""
+
+#: lib/layout-engine/editor.php:700 lib/layout-engine/editor.php:1078
+#, php-format
+msgid "The number of pages using %s as the Custom Layout"
+msgstr ""
+
+#: lib/layout-engine/editor.php:701 lib/layout-engine/editor.php:1081
+#, php-format
+msgid "The number of posts using %s as the Custom Layout"
+msgstr ""
+
+#: lib/layout-engine/editor.php:702 lib/layout-engine/editor.php:1084
+#, php-format
+msgid "The number of views using %s"
+msgstr ""
+
+#: lib/layout-engine/editor.php:824
+#, php-format
+msgid "Duplicating <strong>%s</strong>."
+msgstr ""
+
+#: lib/layout-engine/editor.php:832
+msgid "Create Duplicate"
+msgstr ""
+
+#: lib/layout-engine/editor.php:852 lib/layout-engine/editor.php:1040
+msgid "Set this layout as the default"
+msgstr ""
+
+#: lib/layout-engine/editor.php:853 lib/layout-engine/editor.php:1040
+msgid "Set as default"
+msgstr ""
+
+#: lib/layout-engine/editor.php:879
+#, php-format
+msgid ""
+"Please confirm that you would like to set <strong>%s</strong> as the default "
+"layout."
+msgstr ""
+
+#: lib/layout-engine/editor.php:883
+msgid "Set as Default"
+msgstr ""
+
+#: lib/layout-engine/editor.php:922
+msgid "Select a module to add to the layout"
+msgstr ""
+
+#: lib/layout-engine/editor.php:941
+msgid "Add Module"
+msgstr ""
+
+#: lib/layout-engine/editor.php:980
+msgid ""
+"Builder's Layouts allow you to change the structure of your site. For "
+"details, click the \"Help\" button at the top-right."
+msgstr ""
+
+#: lib/layout-engine/editor.php:986 lib/layout-engine/editor.php:1099
+msgid "Create Layout"
+msgstr ""
+
+#: lib/layout-engine/editor.php:999
+msgid "Layout Description"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1000 lib/layout-engine/editor.php:1035
+msgid ""
+"The default layout is used for all views that don't have a specific view set."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1001 lib/layout-engine/editor.php:1880
+msgid "Width"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1001
+msgid "The width of the Layout in pixels."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1003
+msgid "Listings in bold override the default style.css."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1005 lib/layout-engine/editor.php:1903
+msgid "Hide Widget Areas"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1006
+msgid "The number of pages using the layout as the Custom Layout"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1007
+msgid "Posts"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1007
+msgid "The number of posts using the layout as the Custom Layout"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1008
+msgid "The number of views using the layout"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1047
+msgid "This layout does not use a Extension"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1072 lib/layout-engine/editor.php:1905
+#: lib/layout-engine/modules/class.module.php:362
+#: lib/layout-engine/modules/html/module.php:68
+msgid "No"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1143
+#, php-format
+msgid ""
+"Please confirm that you would like to remove the view customization for "
+"<strong>%s</strong>."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1147 lib/layout-engine/editor.php:1588
+#: lib/layout-engine/editor.php:1634
+msgid "Remove"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1173
+msgid "Received bad data. Either the requested layout or view is missing."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1196 lib/layout-engine/editor.php:1401
+#: lib/layout-engine/editor.php:1525
+msgid "Use the Active Extension"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1197 lib/layout-engine/editor.php:1402
+#: lib/layout-engine/editor.php:1526
+msgid "Disable the Active Extension"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1272 lib/layout-engine/editor.php:1545
+#: lib/layout-engine/editor.php:1551 lib/layout-engine/editor.php:1620
+msgid "Add View"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1272 lib/layout-engine/editor.php:1585
+#: lib/layout-engine/editor.php:1631
+msgid "Modify View"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1296 lib/layout-engine/editor.php:1400
+msgid "Rules"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1297 lib/layout-engine/editor.php:1520
+#: lib/layout-engine/editor.php:2124
+msgid "Use this View's Active Layout"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1298 lib/layout-engine/editor.php:1521
+#: lib/layout-engine/editor.php:2125
+msgid "Use the site's Default Layout"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1345
+msgid "All Categories"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1361
+msgid "All Tags"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1375
+msgid "All Authors"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1405 lib/theme-settings/defaults.php:89
+msgid "Extensions"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1417 lib/layout-engine/editor.php:1825
+msgid ""
+"<p><strong>Notice:</strong> This Extension replaces theme styling with its "
+"own.</p>"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1429
+msgid "View"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1435
+msgid "Tag"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1440
+msgid "Category"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1445
+msgid "Author"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1453
+msgid ""
+"The Active Layout is the Layout that would be used if this View did not "
+"exist."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1460
+msgid ""
+"The Active Extension is the Extension that would be used if this View did "
+"not exist."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1472
+msgid "Add"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1472
+msgid "Update"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1540
+msgid ""
+"Views allow you to apply specific Layouts to specific parts of your site. "
+"For details, click the \"Help\" button at the top-right."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1544
+msgid ""
+"Your site currently does not have any Views configured. Please click the "
+"\"Add View\" button below to apply a specific Layout to a site View."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1562 lib/layout-engine/editor.php:1572
+msgid "Site View"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1563 lib/layout-engine/editor.php:1573
+msgid "Site View Description"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1594 lib/layout-engine/editor.php:1639
+msgid "Modify Layout"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1718
+msgid "You must supply a Name."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1723
+msgid "Please supply a Width."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1727
+msgid "The Width must be an integer number."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1731
+msgid "The Width must be at least 50 pixels. Please increase the Width."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1746
+msgid "A layout with that Name already exists. Please choose a unique name."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1763
+#, php-format
+msgid "%s created"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1768
+#, php-format
+msgid "%s updated"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1793
+msgid "Narrow (600 pixels)"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1794
+msgid "Medium (780 pixels)"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1795
+msgid "Wide (960 pixels)"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1805
+#: lib/layout-engine/modules/class.module.php:264
+#: lib/layout-engine/modules/class.module.php:276
+#: lib/layout-engine/modules/widget-bar/module.php:80
+#: lib/layout-engine/modules/widget-bar/module.php:90
+#: lib/layout-engine/modules/widget-bar/module.php:98
+#: lib/layout-engine/modules/widget-bar/module.php:102
+msgid "Custom..."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1811
+msgid "-- No Extension --"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1866
+msgid "Edit Layout"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1868
+msgid "Add New Layout"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1872
+msgid "Settings"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1877
+msgid ""
+"The name helps identify this Layout's widget areas. Choose a descriptive, "
+"short name."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1883
+msgid ""
+"The width determines how wide the Layout is. Typically, a wider width is "
+"better for more complex Layouts that have multiple sidebars while a more "
+"narrow width is better for minimalistic Layouts such as one that does not "
+"use any sidebars."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1886
+msgid "Custom Width"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1888
+msgid "pixels"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1897
+msgid ""
+"Extensions can provide additional code that changes the content, provides "
+"additional features, or modifies the styling of the Layout.<br /><br />You "
+"can find Extensions in your theme's directory inside a directory named "
+"\"extensions\"."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1906
+msgid ""
+"Use this option to hide this Layout's widget areas from the "
+"<strong>Appearance &gt; Widgets</strong> editor. This makes it easier to "
+"work with other Layout's widget areas."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1914
+msgid ""
+"In order to start building your layout, please click the Add Module link "
+"below."
+msgstr ""
+
+#: lib/layout-engine/editor.php:1932
+msgid "Save Layout"
+msgstr ""
+
+#: lib/layout-engine/editor.php:1933
+msgid "Save Layout and Continue Editing"
+msgstr ""
+
+#: lib/layout-engine/layout-engine.php:129
+#, php-format
+msgid "Edit Layout (%s)"
+msgstr ""
+
+#: lib/layout-engine/layout-engine.php:135
+msgid "Modify Builder Settings"
+msgstr ""
+
+#: lib/layout-engine/layout-meta-box.php:78
+msgid "Select a Layout:"
+msgstr ""
+
+#: lib/layout-engine/layout-meta-box.php:80
+#, php-format
+msgid ""
+"Choosing a custom layout option here causes the chosen layout to be used for "
+"this %1$s. It will override any custom layout views you have configured in "
+"the <a href=\"%2$s\">Layout Editor</a>."
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:193
+msgid "You must supply a width for the sidebar"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:195
+#, php-format
+msgid "You must supply %s widths separated by commas"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:197
+msgid "Only numbers can be used for sidebar widths"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:200
+msgid ""
+"You must leave at least a 200 pixel area for the module content to render "
+"in. Please reduce the size of the sidebar widths."
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:204
+msgid ""
+"The minimum width for a sidebar is 20 pixels. Please ensure that all of your "
+"custom sidebar widths are 20 pixels or larger."
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:235
+msgid ""
+"The module's name helps you identify specific widget locations. Descriptive, "
+"short names typically work best."
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:247
+msgid "No Sidebars"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:248
+msgid "1 Left"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:249
+msgid "2 Left"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:250
+msgid "1 Right"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:251
+msgid "2 Right"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:252
+msgid "Split (1 Left & 1 Right)"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:261
+msgid "Narrow (150px)"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:262
+msgid "Standard (180px)"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:263
+msgid "Wide (200px)"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:267
+msgid "Narrow/Narrow (150px/150px)"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:268
+msgid "Narrow/Standard (150px/180px)"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:269
+msgid "Narrow/Wide (150px/200px)"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:270
+msgid "Standard/Narrow (180px/150px)"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:271
+msgid "Standard/Standard (180px/180px)"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:272
+msgid "Standard/Wide (180px/200px)"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:273
+msgid "Wide/Narrow (200px/150px)"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:274
+msgid "Wide/Standard (200px/180px)"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:275
+msgid "Wide/Wide (200px/200px)"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:306
+msgid "Sidebars"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:309
+msgid ""
+"Sidebars can be added to this module so that you can have widgets to the "
+"left, right, or on both sides of the modules content."
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:312
+msgid "Note: The Sidebar feature is still experimental for this module."
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:317
+msgid "Sidebar&nbsp;Widths"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:320
+msgid ""
+"You can make the widget areas wider or narrower by using these options. To "
+"get more control over the widths used, select \"Custom...\" to put in your "
+"own widths."
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:324
+msgid "Specify the width of each sidebar in pixels."
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:325
+msgid ""
+"For example, if you selected to have 2 Right sidebars and want to separate "
+"them into 170 pixel and 185 pixel widths, input <strong><code>170,185</"
+"code></strong> in the box above."
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:346
+msgid "Style"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:360
+msgid "Remove&nbsp;Wrapper&nbsp;DIVs"
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:362
+msgid ""
+"Enabling this option is only recommended for advanced users as this can "
+"cause layout issues if not properly handled."
+msgstr ""
+
+#: lib/layout-engine/modules/class.module.php:574
+#: lib/layout-engine/modules/class.module.php:599
+msgid "Unable to decide widths due to missing sidebar_widths value."
+msgstr ""
+
+#: lib/layout-engine/modules/content/module.php:23
+msgctxt "module"
+msgid "Content"
+msgstr ""
+
+#: lib/layout-engine/modules/content/module.php:24
+msgid ""
+"This module adds a place for the content to render. Most layouts will have "
+"this module."
+msgstr ""
+
+#: lib/layout-engine/modules/footer/module.php:23
+msgctxt "module"
+msgid "Footer"
+msgstr ""
+
+#: lib/layout-engine/modules/footer/module.php:24
+msgid ""
+"This module adds a place for the footer to render. Most layouts will have "
+"this module at the bottom of the layout."
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:23
+msgctxt "module"
+msgid "Header"
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:24
+msgid "This module offers an easy-to-configure header for your site."
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:49
+#, php-format
+msgid ""
+"By default, this module uses the Site Title and Tagline as set in your "
+"WordPress Dashboard's <a href=\"%s\" target=\"_blank\">General > Settings</"
+"a>. This module will also wrap the title and tagline in div tags with an "
+"exception for the title on a home page view. On the home page, the title "
+"will be wrapped in an <code>h1</code> tag."
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:50
+msgid "These options can be controlled below."
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:57
+msgid "Show Site Title (default)"
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:58
+msgid "Use custom Site Title text"
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:59
+msgid "Do not show Site Title"
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:63
+msgid "Show Tagline (default)"
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:64
+msgid "Use custom Tagline text"
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:65
+msgid "Do not show Tagline"
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:69
+msgid "Recommended Settings (default)"
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:70
+msgid "Custom"
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:74
+msgid "div (default)"
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:85
+msgid "h1 (default)"
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:94
+msgid "Site Title"
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:97
+msgid ""
+"By default, this is the Site Title as configured in WordPress' General "
+"Settings."
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:100
+msgid "Custom Site Title"
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:105
+msgid "Tagline"
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:108
+msgid ""
+"By default, this is the Tagline as configured in WordPress' General Settings."
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:111
+msgid "Custom Tagline"
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:116
+msgid "SEO"
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:119
+msgid ""
+"By default, the Header Module uses the recommended settings of an <code>h1</"
+"code> tag on the Site Title only on the home page view and a <code>div</"
+"code> tag all other times."
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:122
+msgid "Home Page View"
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:123
+#: lib/layout-engine/modules/header/module.php:130
+msgid "Tag for Site Title"
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:126
+#: lib/layout-engine/modules/header/module.php:133
+msgid "Tag for Tagline"
+msgstr ""
+
+#: lib/layout-engine/modules/header/module.php:129
+msgid "Other Views"
+msgstr ""
+
+#: lib/layout-engine/modules/header/widget.php:16
+msgid "Add site title and description to your site"
+msgstr ""
+
+#: lib/layout-engine/modules/header/widget.php:19
+msgid "Header"
+msgstr ""
+
+#: lib/layout-engine/modules/header/widget.php:78
+msgid "No, use custom tag settings"
+msgstr ""
+
+#: lib/layout-engine/modules/header/widget.php:111
+#, php-format
+msgid "Show Site Title (configured in <a href=\"%s\">Settings > General</a>):"
+msgstr ""
+
+#: lib/layout-engine/modules/header/widget.php:115
+msgid "Customize Site Title (leave blank for default Site Title):"
+msgstr ""
+
+#: lib/layout-engine/modules/header/widget.php:119
+#, php-format
+msgid "Show Tagline (configured in <a href=\"%s\">Settings > General</a>):"
+msgstr ""
+
+#: lib/layout-engine/modules/header/widget.php:123
+msgid "Customize Tagline (leave blank for default Tagline):"
+msgstr ""
+
+#: lib/layout-engine/modules/header/widget.php:127
+msgid "Site Title tag (when on the home page):"
+msgstr ""
+
+#: lib/layout-engine/modules/header/widget.php:131
+msgid "Tagline tag (when on the home page):"
+msgstr ""
+
+#: lib/layout-engine/modules/header/widget.php:135
+msgid "Site Title tag (on other site views):"
+msgstr ""
+
+#: lib/layout-engine/modules/header/widget.php:139
+msgid "Tagline tag (on other site views):"
+msgstr ""
+
+#: lib/layout-engine/modules/header/widget.php:144
+#: lib/widgets/widget-content/widget.php:99
+msgid "Widget Style:"
+msgstr ""
+
+#: lib/layout-engine/modules/html/module.php:23
+msgctxt "module"
+msgid "HTML"
+msgstr ""
+
+#: lib/layout-engine/modules/html/module.php:24
+msgid ""
+"This module gives you a place to add freeform HTML to the layout. It also "
+"supports the use of shortcodes and execution of PHP code."
+msgstr ""
+
+#: lib/layout-engine/modules/html/module.php:43
+msgid ""
+"This module isn't limited to just static HTML content. You can also use "
+"shortcodes and PHP code to add generated content. PHP support must first be "
+"activated with the Enable PHP option below."
+msgstr ""
+
+#: lib/layout-engine/modules/html/module.php:44
+msgid ""
+"Using shortcodes is preferred over PHP code as allowing PHP code has "
+"security risks."
+msgstr ""
+
+#: lib/layout-engine/modules/html/module.php:66
+msgid "Enable PHP"
+msgstr ""
+
+#: lib/layout-engine/modules/html/module.php:68
+msgid ""
+"Enabling this option allows for processing of PHP code inside the module. "
+"<strong>Always review the PHP code if taken from a third party as it could "
+"pose a serious security threat.</strong>"
+msgstr ""
+
+#: lib/layout-engine/modules/image/module.php:22
+msgctxt "module"
+msgid "Image"
+msgstr ""
+
+#: lib/layout-engine/modules/image/module.php:23
+msgid ""
+"This module adds an image to the layout. This can be used to add static "
+"headers or just something to spice up your layout."
+msgstr ""
+
+#: lib/layout-engine/modules/image/module.php:74
+#, php-format
+msgid ""
+"Unable to save uploaded image. Ensure that the web server has permissions to "
+"write to the uploads folder.\n"
+"\n"
+"Message: %s"
+msgstr ""
+
+#: lib/layout-engine/modules/image/module.php:81
+msgid "You must upload an image."
+msgstr ""
+
+#: lib/layout-engine/modules/image/module.php:85
+msgid "You must enter an integer value for the Height."
+msgstr ""
+
+#: lib/layout-engine/modules/image/module.php:87
+msgid "The minimum Height is 10 pixels. Please increase the Height."
+msgstr ""
+
+#: lib/layout-engine/modules/image/module.php:97
+msgid "An image has already been uploaded."
+msgstr ""
+
+#: lib/layout-engine/modules/image/module.php:98
+msgid ""
+"<a href=\"#\" id=\"show-image-upload-row\">Click here</a> to upload a new "
+"image."
+msgstr ""
+
+#: lib/layout-engine/modules/image/module.php:106
+msgid "Automatic, use a height that preserves the image's aspect ratio"
+msgstr ""
+
+#: lib/layout-engine/modules/image/module.php:107
+msgid "Manual, select a height manually"
+msgstr ""
+
+#: lib/layout-engine/modules/image/module.php:115
+msgid "Upload Image"
+msgstr ""
+
+#: lib/layout-engine/modules/image/module.php:120
+msgid "Height"
+msgstr ""
+
+#: lib/layout-engine/modules/image/module.php:123
+msgid ""
+"If Manual is selected, the image will first be resized to fit the height and "
+"then cropped to fit the width."
+msgstr ""
+
+#: lib/layout-engine/modules/image/module.php:126
+msgid "Manual height"
+msgstr ""
+
+#: lib/layout-engine/modules/image/module.php:130
+msgid "Link URL"
+msgstr ""
+
+#: lib/layout-engine/modules/image/module.php:133
+msgid ""
+"Make sure that you use complete URLs including the <code>http://</code> "
+"portion. If you leave this fied empty, no link URL will be used."
+msgstr ""
+
+#: lib/layout-engine/modules/image/module.php:136
+msgid "Link Opens New Window"
+msgstr ""
+
+#: lib/layout-engine/modules/image/module.php:165
+msgid "Uploading, please wait."
+msgstr ""
+
+#: lib/layout-engine/modules/image/module.php:218
+msgid "Layout Image"
+msgstr ""
+
+#: lib/layout-engine/modules/navigation/module.php:26
+msgctxt "module"
+msgid "Navigation"
+msgstr ""
+
+#: lib/layout-engine/modules/navigation/module.php:27
+msgid ""
+"This module adds a horizontal navigation bar. Category and Page navigations "
+"are available."
+msgstr ""
+
+#: lib/layout-engine/modules/navigation/module.php:81
+#, php-format
+msgid ""
+"A new Navigation Type must be selected for the Navigation module (original "
+"setting: %s)."
+msgstr ""
+
+#: lib/layout-engine/modules/navigation/module.php:130
+#, php-format
+msgid ""
+"The Layout Module offers a number of different options for adding navigation "
+"elements to your layout. To get the most power out of this feature, use "
+"WordPress' built-in <a href=\"%s\" target=\"_blank\">Menu Editor</a> to "
+"create your menus. You can then select to use one of these menus in the "
+"Navigation Module."
+msgstr ""
+
+#: lib/layout-engine/modules/navigation/module.php:131
+#, php-format
+msgid ""
+"The Legacy Menu Types are present as a fallback in case you have not "
+"configured any menus in the <a href=\"%1$s\" target=\"_blank\">Menu Editor</"
+"a>. The Builder menu types can be configured in the <a href=\"%2$s\" target="
+"\"_blank\">Builder's Theme Settings</a>. The WordPress Pages option uses "
+"WordPress' built-in <code>wp_list_pages</code> function to show a listing of "
+"all of your site's pages."
+msgstr ""
+
+#: lib/layout-engine/modules/navigation/module.php:140
+msgid "Navigation Type"
+msgstr ""
+
+#: lib/layout-engine/modules/navigation/module.php:193
+msgid "Home"
+msgstr ""
+
+#: lib/layout-engine/modules/navigation/module.php:255
+msgid "Menus"
+msgstr ""
+
+#: lib/layout-engine/modules/navigation/module.php:258
+msgid "Legacy Menu Types"
+msgstr ""
+
+#: lib/layout-engine/modules/navigation/module.php:259
+#: lib/theme-settings/tab-basic.php:372
+msgid "Builder Settings Categories"
+msgstr ""
+
+#: lib/layout-engine/modules/navigation/module.php:260
+#: lib/theme-settings/tab-basic.php:371
+msgid "Builder Settings Pages"
+msgstr ""
+
+#: lib/layout-engine/modules/navigation/module.php:261
+#: lib/theme-settings/tab-basic.php:373
+msgid "WordPress Pages"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:23
+msgctxt "module"
+msgid "Widget Bar"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:24
+msgid "This module can contain one to three widget locations."
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:48
+#, php-format
+msgid "You must supply %s custom widget width percentages separated by commas"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:50
+msgid "Only numbers can be used for custom widget width percentages"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:53
+msgid "The sum of the custom widget width percentages must equal 100"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:57
+msgid ""
+"The minimum percentage width for a widget area is 1%. Please ensure that all "
+"of your custom widget width percentages are 1% or greater."
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:70
+msgid "100%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:73
+msgid "50% / 50%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:74
+msgid "80% / 20%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:75
+msgid "20% / 80%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:76
+msgid "70% / 30%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:77
+msgid "30% / 70%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:78
+msgid "60% / 40%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:79
+msgid "40% / 60%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:83
+msgid "33% / 33% / 33%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:84
+msgid "60% / 20% / 20%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:85
+msgid "20% / 60% / 20%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:86
+msgid "20% / 20% / 60%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:87
+msgid "50% / 25% / 25%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:88
+msgid "25% / 50% / 25%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:89
+msgid "25% / 25% / 50%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:93
+msgid "25% / 25% / 25% / 25%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:94
+msgid "40% / 20% / 20% / 20%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:95
+msgid "20% / 40% / 20% / 20%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:96
+msgid "20% / 20% / 40% / 20%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:97
+msgid "20% / 20% / 20% / 40%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:101
+msgid "20% / 20% / 20%/ 20% / 20%"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:129
+msgid "Columns"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:132
+msgid "Each column becomes a widget area that you can add widgets to."
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:135
+msgid "Column Widths"
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:138
+msgid ""
+"You can make the columns wider or narrower by using these options. To get "
+"more control over the widths used, select \"Custom...\" to put in your own "
+"widths."
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:142
+msgid "Specify the percentage width of each widget area."
+msgstr ""
+
+#: lib/layout-engine/modules/widget-bar/module.php:143
+msgid ""
+"For example, if you have three widget areas and want to separate them into "
+"20%, 30%, and 50% widths, input <strong><code>20,30,50</code></strong> in "
+"the box above."
+msgstr ""
+
+#: lib/layout-engine/sidebars.php:246
+#, php-format
+msgid ""
+"A problem happened with the widget area registration. This sidebar has an "
+"index of <code>%s</code> but it was unable to be found in the registered "
+"sidebars."
+msgstr ""
+
+#: lib/layout-engine/sidebars.php:250
+msgid "This is a Widget Section"
+msgstr ""
+
+#: lib/layout-engine/sidebars.php:251
+#, php-format
+msgid ""
+"This section is widgetized. If you would like to add content to this "
+"section, you may do so by using the Widgets panel from within your WordPress "
+"Admin Dashboard. This Widget Section is called \"<strong>%s</strong>\""
+msgstr ""
+
+#: lib/special-utilities/fix-builder_add_scripts-in-child-theme.php:33
+msgid ""
+"In order for Builder to function properly, the child theme must have its "
+"<code>builder_add_scripts</code> function (and all references to that "
+"function, such as in <code>add_action</code> function calls) replaced with a "
+"new name such as <code>builder_child_theme_add_scripts</code>. Builder "
+"attempted to do this automatically, but it was unable to do so. This is "
+"likely due to file permissions. Either fix the file permissions so that "
+"Builder can handle this fix automatically or update your child theme's "
+"<code>functions.php</code> file manually."
+msgstr ""
+
+#: lib/theme-settings/defaults.php:74
+msgid "Basic"
+msgstr ""
+
+#: lib/theme-settings/defaults.php:75
+msgid "SEO (coming soon)"
+msgstr ""
+
+#: lib/theme-settings/defaults.php:77
+msgid "Menu Builder"
+msgstr ""
+
+#: lib/theme-settings/defaults.php:78
+msgid "Analytics and JavaScript Code"
+msgstr ""
+
+#: lib/theme-settings/defaults.php:79
+msgid "Favicon"
+msgstr ""
+
+#: lib/theme-settings/defaults.php:80
+msgid "Identify Widget Areas"
+msgstr ""
+
+#: lib/theme-settings/defaults.php:82
+msgid "Theme Features"
+msgstr ""
+
+#: lib/theme-settings/defaults.php:84
+msgid "Billboard"
+msgstr ""
+
+#: lib/theme-settings/defaults.php:84
+msgid ""
+"Billboard (found in the DisplayBuddy > Billboard menu) provides a quick and "
+"easy way to create a set of linked images that can be used as a widget."
+msgstr ""
+
+#: lib/theme-settings/defaults.php:85
+msgid "Feedburner Widget"
+msgstr ""
+
+#: lib/theme-settings/defaults.php:85
+#, php-format
+msgid ""
+"The Feedburner Widget adds a <a href=\"%s\">Feedburner</a> subscription form."
+msgstr ""
+
+#: lib/theme-settings/defaults.php:86
+msgid "Duplicate Sidebar Widget"
+msgstr ""
+
+#: lib/theme-settings/defaults.php:86
+msgid ""
+"The Duplicate Sidebar Widget allows for easy duplication of another "
+"sidebar's widgets."
+msgstr ""
+
+#: lib/theme-settings/defaults.php:87 lib/widgets/widget-content/widget.php:21
+msgid "Widget Content"
+msgstr ""
+
+#: lib/theme-settings/defaults.php:87
+msgid ""
+"The Widget Content feature adds a new top-level menu called \"Widget Content"
+"\" that allows for easy creation of content that can then be added to a "
+"sidebar by using the Widget Content widget."
+msgstr ""
+
+#: lib/theme-settings/defaults.php:88
+msgid "Plugin Features"
+msgstr ""
+
+#: lib/theme-settings/defaults.php:88
+msgid ""
+"Builder can provide custom coding, styling, and JavaScript to enhance "
+"specific plugins running alongside Builder. All of these enhancements can be "
+"removed by disabling this option."
+msgstr ""
+
+#: lib/theme-settings/defaults.php:89
+msgid ""
+"Builder's Extensions are like mini-themes that can be applied to Layouts or "
+"Views. This feature can be disabled if Extensions are not used so that "
+"Extensions are hidden from the interface."
+msgstr ""
+
+#: lib/theme-settings/editor.php:32
+msgctxt "page title"
+msgid "Theme Settings"
+msgstr ""
+
+#: lib/theme-settings/editor.php:33
+msgctxt "menu title"
+msgid "Settings"
+msgstr ""
+
+#: lib/theme-settings/seo-frontend.php:545
+#, php-format
+msgid "Search Results %1$s %2$s"
+msgstr ""
+
+#: lib/theme-settings/seo-frontend.php:549
+msgid "Page not found"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:35
+msgid ""
+"This Settings page helps you control global settings for your Builder theme. "
+"To make working with the options easier, groups of options are divided into "
+"tabs."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:36
+msgid ""
+"Each tab is divided into sections that can be collapsed by clicking on the "
+"title bar of the section. You can also rearrange the sections by dragging "
+"them by the title bar. When you collapse and rearrange items, their "
+"arrangement will be remembered."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:37
+msgid ""
+"The Basic tab includes a mix of many different kinds of options that can "
+"help you quickly configure your Builder theme. Options include configuring "
+"basic menus, changing how Builder identifies widget areas, modifying comment "
+"functionality on your site, and enabling/disabling different Builder "
+"features. Some child themes add custom options in their own section to this "
+"tab. Each section describes its options in further details."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:38
+msgid ""
+"The SEO tab is placeholder for a future feature. There is currently a beta "
+"SEO plugin you can download from the iThemes member area if you are "
+"interested in trying out the feature before it is bundled into Builder."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:39
+msgid ""
+"The Import/Export tab allows you to export and import Builder settings, "
+"including Layouts and Views. Please visit that tab for more details."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:53
+msgid "Individual blog posts"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:54
+msgid "Individual pages"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:55
+msgid ""
+"When you upload images, they get their own Media page that shows the image. "
+"This option controls whether or not comments are enabled on these Media "
+"pages."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:56
+msgid "Custom post type"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:113
+msgid ""
+"Unable to save the supplied Favicon image file. Pleave verify that the wp-"
+"content/uploads directory can be written to."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:162
+msgid ""
+"Unable to generate a Favicon image from the supplied file. Please verify "
+"that the file is a valid JPG, JPEG, PNG, GIF, or ICO image."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:183
+msgid "Child Theme Settings"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:264
+msgid ""
+"Favicons are small images that are used in a variety of ways, but the one "
+"most people are familiar with is that the Favicon is the small image used "
+"next to the title of a site in browser tabs. This makes it easy for people "
+"to quickly identify specific sites just by skimming the images on the tabs."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:267
+msgid ""
+"The following options allow you to control the Favicon settings for your "
+"site. You can select from a few built-in options, upload your own image to "
+"use, or opt for the minimalist route by disabling the Favicon entirely."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:271
+msgid "Choose from a set of provided images (default)"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:272
+msgid "Don't have your own image that you want to use? Try one of ours."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:275
+msgid "Upload your own image"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:276
+msgid "Make your site your own by uploading a custom image to use."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:279
+msgid ""
+"Use the active child theme's Favicon image located at images/favicon.ico"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:280
+msgid ""
+"This is a legacy option provided to help some users transition to this new "
+"feature. Since this feature helps prevent issues with different browsers "
+"caching the Favicon image, it is recommended that you use the \"Upload your "
+"own image\" option to upload the image rather than this option."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:283
+msgid "Don't use a Favicon from Builder"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:284
+msgid ""
+"This will turn off Builder's built-in Favicon feature. Plugins can still "
+"provide a Favicon, and you can modify the header.php file if you'd like to "
+"hand-code in your own solution."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:292
+msgid "Which image would you like to use for your Favicon?"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:317
+msgid "You currently have the following image uploaded:"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:319
+msgid "You currently have an image uploaded."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:327
+msgid ""
+"The file format for a Favicon image should be ICO, a format created for "
+"Windows; however, if you upload a JPG, PNG, or GIF image, a valid ICO file "
+"will automatically be generated for you."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:328
+msgid ""
+"This image will be shown at just 16 pixels by 16 pixels, so make sure that "
+"the image you use is that size or is square and can resize nicely to those "
+"dimensions."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:335
+msgid ""
+"<em>Make sure that you click on the \"Save Settings\" button below for your "
+"file to be uploaded.</em>"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:342
+msgid "Should the selected Favicon be used for the WordPress Dashboard?"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:346
+msgid "Yes, use the selected Favicon in the Dashboard (default)"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:347
+msgid ""
+"Make your site's tabs easier to identify by using the same Favicon for all "
+"tabs, even those that show the Dashboard (the back-end of WordPress)."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:350
+msgid "No, do not use the selected Favicon in the Dashboard"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:351
+msgid ""
+"Do not add the Favicon to the Dashboard. This will not prevent a plugin from "
+"adding a Favicon to the Dashboard."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:365
+#, php-format
+msgid ""
+"Builder offers a variety of ways to create navigation menus. The \"Pages\" "
+"and \"Categories\" sets of checkboxes below are the original Menu Builder "
+"offered by Builder. As long as your site is running WordPress 3.0 or above, "
+"you can use the much more powerful <a href=\"%1$s\">Menus editor</a> built "
+"into WordPress and found under <a href=\"%1$s\">Appearance &gt; Menus</a>. "
+"It is recommended that you use the new Menus editor rather than this now "
+"legacy set of menu options as WordPress' Menus editor offers many more "
+"options."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:368
+#, php-format
+msgid ""
+"Menus are added to layouts with the Navigation module. To add or modify "
+"Navigation modules use the <a href=\"%1$s\">Layouts editor</a> found under "
+"<a href=\"%1s$\">My Theme &gt; Layouts</a>. Once in the Layout editor, "
+"select which layout you would like to modify, add new or modify Navigation "
+"modules as needed, and select the appropriate menu that should be used at "
+"that location. The menu options available in the Navigation module are as "
+"follows:"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:371
+msgid "Controlled by the Pages checkboxes below"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:372
+msgid "Controlled by the Categories checkboxes below"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:373
+msgid "Lists all the pages on the site"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:375
+msgid "Custom Menu - MENU NAME"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:375
+#, php-format
+msgid ""
+"An option is available for each menu created in WordPress' built-in <a href="
+"\"%s\">Menus editor</a>"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:405
+msgid ""
+"Much of the power of Builder comes from the large number of widget areas you "
+"can create and manage. To make it easier to manage such a large number of "
+"widgets, Builder can show the name of each widget area (sidebar) by adding "
+"some filler content to the area. This both identifies the name of the widget "
+"area and makes it easier to see the full structure of a layout. These "
+"settings control this feature."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:408
+msgid "When should a widget area be identified?"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:410
+msgid "Only if widget area does not have any widgets (default)"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:411
+msgid "Always identify the widget area"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:412
+msgid "Disable widget area identification"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:416
+msgid "Who should be able to see the widget identification information?"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:418
+msgid "Only logged in users that can modify widgets (default)"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:419
+msgid "Any logged in user"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:420
+msgid "Everyone including visitors that are not logged in"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:430
+#, php-format
+msgid ""
+"<a href=\"%1$s\">Web analytics software</a> tracks what content visitors to "
+"your site are interested in and how they get to your site. Two web analytics "
+"providers popular with WordPress users are <a href=\"%2$s\">Google "
+"Analytics</a> and <a href=\"%3$s\">Woopra</a>. Both offer free services "
+"depending on usage. Use the settings below to easily add Google Analytics "
+"and Woopra tracking code to your site."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:432
+msgid ""
+"Before activating Builder's built-in support for either Google Analytics or "
+"Woopra, disable any plugins offering the same feature. Failure to do so can "
+"result in each visitor being counted multiple times, which will badly skew "
+"your data."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:434
+#, php-format
+msgid ""
+"When using this Builder feature to integrate Google Analytics or Woopra "
+"code, the following list of features are used by default. These features can "
+"be customized in the <a href=\"%s\">Advanced Tab</a>."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:437
+msgid "Information about the visitor and current site view are tracked."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:438
+msgid "Outbound, download, and email link clicks are tracked."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:439
+msgid "Searches and submitted comments are tracked as events."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:440
+msgid ""
+"The recommended asynchronous code is used in the header. This speeds page "
+"load times and offers more reliable tracking."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:441
+msgid ""
+"Logged in users with a role of Editor or Administrator are not tracked. This "
+"prevents traffic inflation by editors and site administrators."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:444
+msgid ""
+"Beyond web analytics, some web tools or applications require adding "
+"JavaScript code either inside the head tag or in the site's footer. Use the "
+"text area inputs below to manually add code where it is needed."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:449
+msgid "Enable Google Analytics"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:451
+#, php-format
+msgid ""
+"Your site is uniquely identified in Google Analytics by an Account ID. An "
+"example Account ID is UA-12345-6. For help on finding your Account ID, watch "
+"<a href=\"%s\">this video</a>."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:452
+msgid "Google Analytics Account ID"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:452
+msgid "(required)"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:457
+msgid "Enable Woopra"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:459
+#, php-format
+msgid ""
+"By default (when the Woopra Domain input below is empty), Woopra will use "
+"the domain of the \"Site address (URL)\" configured in <a href=\"%s"
+"\">Settings &gt; General</a>. This can be changed by supplying a new domain "
+"below."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:460
+msgid "Woopra Domain"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:460
+msgid "(optional)"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:465
+msgid ""
+"List any JavaScript or other code to be manually inserted inside the site's "
+"<code>&lt;head&gt;</code> tag in the input below."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:469
+msgid ""
+"List any JavaScript or other code to be manually inserted in the site's "
+"footer just above the <code>&lt;/body&gt;</code> tag in the input below."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:481
+msgid ""
+"Builder offers a large number of built-in features. These features can be "
+"enabled and disabled using the following options."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:489 lib/theme-settings/tab-basic.php:490
+msgid " (default)"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:498
+#, php-format
+msgid "Enable %1$s%2$s"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:499
+#, php-format
+msgid "Disable %1$s%2$s"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:511
+#, php-format
+msgid ""
+"<a href=\"%s\">SEO</a> is short for Search Engine Optimization. The goal of "
+"of SEO is to increase traffic to the site through search engines, typically "
+"by focusing on specific keywords and phrases."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:512
+msgid ""
+"While much of the SEO process relies upon creating content that is relavent "
+"and follows SEO best-practices, both WordPress and Builder offer tools that "
+"help you control the SEO characteristics of your site. These options allow "
+"you to customize the SEO features of Builder."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:517
+#, php-format
+msgid ""
+"The value of <a href=\"%s\">META keywords</a> is typically considered to be "
+"very low or non-existent. Having them can't hurt your site however."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:518
+msgid ""
+"Builder can automatically generate keywords for your post pages based upon "
+"the tags you have assigned to the post. You can use the following options to "
+"customize how Builder uses keywords."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:520
+msgid ""
+"Enable automatic generation of META keywords for individual posts based upon "
+"the assigned tags. (default)"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:521
+msgid "Do not automatically generate META keywords for individual posts."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:525
+#, php-format
+msgid ""
+"Allowing a search engine to <a href=\"%s\">index</a> content on your site "
+"means that the content is searchable and that you would like search engines "
+"to send traffic to that location on your site. Since there are many views on "
+"a WordPress site that contain duplicate information (individual post views, "
+"post listings, etc) and duplicate content on your site can hurt your search "
+"rankings, Builder (by default) will only tell search engines to index the "
+"home page, blog posts, and pages."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:526
+msgid ""
+"Depending on the configuration of your site, you may have unique content on "
+"your category archive pages. The following option allows you to control the "
+"indexing of category archives. Enabling category archive indexing without "
+"having a specific reason to do so is not recommended."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:528
+msgid "Disable category archive indexing (default)"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:529
+msgid "Enable category archive indexing"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:539
+#, php-format
+msgid ""
+"Most comments settings for your site are provided by WordPress in the <a "
+"href=\"%s\">Settings &gt; Discussion</a> page. The following settings "
+"customize options specific to the theme."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:542
+msgid ""
+"Displaying comments and the comment entry form can be enabled or disabled "
+"for each type of content by checking or unchecking the appropriate "
+"checkboxes below. When a content type has comments disabled, neither any "
+"comment counts, existing comments, the comment entry form, nor the "
+"\"comments are closed\" message will be shown."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:543
+msgid ""
+"Comments can be disabled on a per-entry basis. If comments are not "
+"appearing, modify the specific entry (post, page, etc) that should have "
+"comments to ensure that the \"Allow comments\" checkbox under \"Discussion\" "
+"is checked."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:544
+msgid ""
+"Which content types should display comment counts (in listings), comments, "
+"the comment form, and \"comments are closed\" messages?"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:555
+msgid ""
+"What should be displayed if comments have been disabled for a specific "
+"entry? This message will be shown in place of the comment entry form."
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:557
+msgid "Do not display any message (default)"
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:558
+msgid ""
+"Display message provided by theme, default in Builder is \"Comments are "
+"closed.\""
+msgstr ""
+
+#: lib/theme-settings/tab-basic.php:559
+msgid "Custom message: "
+msgstr ""
+
+#: lib/theme-settings/tabs/seo.php:103
+msgid "Titles"
+msgstr ""
+
+#: lib/theme-settings/tabs/seo.php:104
+msgid "Description"
+msgstr ""
+
+#: lib/theme-settings/tabs/seo.php:105
+msgid "Robots"
+msgstr ""
+
+#: lib/theme-settings/tabs/seo.php:106
+msgid "Keywords"
+msgstr ""
+
+#: lib/theme-settings/tabs/seo.php:126
+msgid ""
+"Meta tags give web browsers and search engines information about the current "
+"page. While creating quality, relevant content is the most important SEO "
+"practice of all, having good meta tags <i>can</i> improve your rankings and "
+"provide better information in your search listings."
+msgstr ""
+
+#: lib/tutorials/tutorials.php:53
+msgid ""
+"Welcome to Builder. Throughout the theme's back-end, you can use this help "
+"pulldown to get additional information about the page you are looking at."
+msgstr ""
+
+#: lib/tutorials/tutorials.php:54
+msgid ""
+"You may also see question mark icons next to some of the options or "
+"descriptions. If you hover over one of these icons, you will get additional "
+"information about that specific option."
+msgstr ""
+
+#: lib/tutorials/tutorials.php:55
+msgid ""
+"The videos on this page help get you up and running quickly. At the bottom "
+"of the page are some important links such as access to the iThemes support "
+"forum and member area."
+msgstr ""
+
+#: lib/tutorials/tutorials.php:56
+#, php-format
+msgid ""
+"After getting a feel for Builder from the videos, check out the <a href=\"%s"
+"\">Layouts and Views</a> editor where you can start making modifications to "
+"your site to make it the site right for you."
+msgstr ""
+
+#: lib/widgets/duplicate-sidebar/widget.php:22
+msgid "Duplicate another sidebar&#8217;s widgets"
+msgstr ""
+
+#: lib/widgets/duplicate-sidebar/widget.php:25
+msgid "Duplicate Sidebar"
+msgstr ""
+
+#: lib/widgets/duplicate-sidebar/widget.php:83
+msgid "Sidebar to Duplicate:"
+msgstr ""
+
+#: lib/widgets/widget-content/widget.php:18
+msgid "Add \"Widget Content\" entries to a sidebar"
+msgstr ""
+
+#: lib/widgets/widget-content/widget.php:90
+msgid "Title:"
+msgstr ""
+
+#: lib/widgets/widget-content/widget.php:94
+msgid "Widget Content Entry:"
+msgstr ""
+
+#: lib/widgets/widget-styler.php:67
+msgid ""
+"Your Builder child theme offers different widget styles. Select one from the "
+"drop down for a different look for this widget."
+msgstr ""
+
+#: searchform.php:4
+msgid "Search"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Builder"
+msgstr ""
+
+#. #-#-#-#-#  Builder.pot (Builder 3.1.1)  #-#-#-#-#
+#. Theme URI of the plugin/theme
+#. #-#-#-#-#  Builder.pot (Builder 3.1.1)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "http://ithemes.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Builder lets you create custom layouts quickly and easily. Builder's default "
+"style serves as a clean template that you can use to build your own designs. "
+"For other designs, see your iThemes' Member Area where there are dozens of "
+"available child themes."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "iThemes"
+msgstr ""
+
+#. Tags of the plugin/theme
+msgid "blog, theme options, multiple layouts, multiple color schemes"
+msgstr ""

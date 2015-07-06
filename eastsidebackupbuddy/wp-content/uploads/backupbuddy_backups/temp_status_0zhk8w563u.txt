@@ -1,0 +1,53 @@
+1436185219|details|Setting greedy script limits.
+1436185219|details|Attempted to increase maximum PHP runtime. Original: 120; New: 7200.
+1436185219|details|Set memory limit to 256M. Previous value < 256M.
+1436185219|details|Original PHP memory limit: 128; New: 256M.
+1436185219|details|Finished greedy script limits.
+1436185219|message|Full backup mode.
+1436185219|details|Performing pre-backup procedures.
+1436185219|details|Creating import data file.
+1436185219|details|Finished creating import data file.
+1436185219|details|Finished pre-backup procedures.
+1436185219|action|finish_settings
+1436185219|message|Running in modern backup mode based on settings.
+1436185219|details|Scheduling Cron
+1436185227|details|Setting greedy script limits.
+1436185227|details|Attempted to increase maximum PHP runtime. Original: 30; New: 7200.
+1436185227|details|Set memory limit to 256M. Previous value < 256M.
+1436185227|details|Original PHP memory limit: 128; New: 256M.
+1436185227|details|Finished greedy script limits.
+1436185227|details|Peak memory usage: 18.541 MB
+1436185227|action|start_database
+1436185227|message|Starting database backup process.
+1436185227|message|Saving database content to file. (53 tables)
+1436185227|message|Only including WordPress tables in backup (unless more explicitly defined).
+1436185227|details|Beginning actual SQL dump.
+1436185227|details|Finished actual SQL dump.
+1436185227|status|database_end
+1436185227|action|finish_database
+1436185227|details|Finished function `backup_create_database_dump`.
+1436185227|details|Peak memory usage: 20.877 MB
+1436185227|details|Scheduling Cron
+1436185228|details|Setting greedy script limits.
+1436185228|details|Attempted to increase maximum PHP runtime. Original: 30; New: 7200.
+1436185228|details|Set memory limit to 256M. Previous value < 256M.
+1436185228|details|Original PHP memory limit: 128; New: 256M.
+1436185228|details|Finished greedy script limits.
+1436185228|details|Peak memory usage: 18.538 MB
+1436185228|action|start_files
+1436185228|details|Using all available zip methods in preferred order.
+1436185228|details|Creating ZIP file `/Applications/MAMP/htdocs/eastsidebackupbuddy/wp-content/uploads/backupbuddy_backups/backup-localhost_8888_eastsidebackupbuddy-2015_07_06-0zhk8w563u.zip`. Adding directory `/Applications/MAMP/htdocs/eastsidebackupbuddy/`. Compression: 1; Excludes: wp-content/uploads/backupbuddy_backups/
+1436185228|details|Using exec() method for ZIP.
+1436185228|details|Calculating directories to exclude from backup.
+1436185228|details|Excluding: wp-content/uploads/backupbuddy_backups/
+1436185228|message|Only excluding archives directory based on settings. 1 total.
+1436185228|details|Exec command (Linux): zip -q -r -b '/Applications/MAMP/htdocs/eastsidebackupbuddy/wp-content/uploads/backupbuddy_backups/temp_zip_0zhk8w563u/' '/Applications/MAMP/htdocs/eastsidebackupbuddy/wp-content/uploads/backupbuddy_backups/backup-localhost_8888_eastsidebackupbuddy-2015_07_06-0zhk8w563u.zip' . -i '*' -x 'wp-content/uploads/backupbuddy_backups/*' "/importbuddy.php"
+1436185238|message|Full speed mode completed & generated ZIP file.
+1436185238|message|Backup ZIP file successfully created.
+1436185238|details|Chmod to 0644 succeeded.
+1436185238|details|Database Server has gone away, attempting to reconnect.
+1436185238|details|Database Server reconnection failed.
+1436185238|error|Backup FAILED. Backup file produced but Database Server has gone away, unable to schedule next backup step
+1436185238|error|Failed function backup_zip_files. Backup terminated.
+1436185238|details|Peak memory usage: 18.538 MB
+1436185238|action|halt_script

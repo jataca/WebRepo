@@ -1,0 +1,53 @@
+1.0.1 - 2011-02-15 - Skyler Moore
+	Initial release.
+1.0.2 - 2011-02-22 - Skyler Moore
+	Updated Youtube and Vimdeo embed code to use wmode opaque.
+		Updated vidembed.php:
+			line 320: Added wmode="opaque"
+			line 305: Added $return .=	'<param name="wmode" value="opaque"></param>';
+			line 306: Added wmode="opaque"
+1.0.3 - 2011-02-22 - Skyler Moore
+	Moved YouTube url change inside of the "if( $ve_type == 'yt')" code block.
+		Updated vidembed.php:
+			line 214: REMOVED $ve_url = str_replace("watch?v=", "v/", $atts['url']);
+			line 241: REMOVED $ve_url = str_replace("watch?v=", "v/", $instance['url']);
+			line 275: ADDED   $ve_url = str_replace("watch?v=", "v/", $ve_url);
+1.0.4 - 2011-02-24 - Skyler Moore
+	Fixed quicktime embed by adding fit to scale param
+		Updated vidembed.php:
+			line 328 added: $return .= 	'<param name="controller" value="true">';
+			line 329 added: $return .=	'<param name="scale" value="tofit">';
+			line 330 added to embed tag : controller="true" scale="tofit"
+1.0.5 - 2011-03-29 - Skyler Moore
+	Updated to filter out https on submission.
+		Updated classes/admin.php:
+			lines 52-62 added checks for standalone
+			// check for https
+			if (ve_url.match(/https:/i)) {
+				var ve_url = (ve_url.replace(/https:/i, "http:"));
+			}
+		Updated classes/widget.php:
+			lines 98-111 added checks for standalone
+			// check for https
+			$findme   = 'https:';
+			$scheck = strpos($new_instance['url'], $findme);
+			if ($scheck !== FALSE ) {
+				$new_instance['url'] = str_replace("https:", "http:", $new_instance['url']);
+			}
+1.0.6 - 2011-06-13 - Skyler Moore
+	Updated to latest updater replaced lib/updater
+1.0.7 - 2011-07-01 - Skyler Moore
+	Updated to the latest updater replaced lib/updater to fix changelog.
+1.0.8 - 2011-08-15 - Josh Benham
+	Updated lib/updater to latest version 1.0.1
+1.0.9 - 2011-08-16 - Josh Benham 
+	Fixed wrong version number 
+1.0.10 - 2011-09-07 - Dustin Bolton
+	YouTube & Vimeo videos are now compatible with IOS based devices (iPad, iPhone, etc) and browsers supporting HTML5.
+1.0.11 - 2011-09-22 - Ronald Huereca
+	Fixing updater issue
+1.0.12 - 2011-09-22 - Ronald Huereca
+	Fixing updater issue
+1.0.13 - 2011-09-27 - Daniel Harzheim
+	Removed code for custom borders(not available for html5 code) and added
+	ability to select theme.

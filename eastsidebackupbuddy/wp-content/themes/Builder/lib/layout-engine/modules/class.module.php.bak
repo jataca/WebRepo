@@ -1,0 +1,805 @@
+<?php
+
+/*
+Written by Chris Jean for iThemes.com
+Version 3.1.1
+
+Version History
+	3.0.0 - 2010-01-07
+		Major rewite
+	3.0.1 - 2010-01-07
+		Improved width filters
+		
+		builder_module_filter_width filter changed to builder_module_filter_widths and argument
+			changed to $fields array with a widths array entry
+		builder_module_filter_calculated_widths filter added to allow for filtering widths after
+			all calculations have finished
+	3.0.2 - 2010-01-10
+		Added class_prefix to class names that weren't using it
+		Pass $fields through _modify_module_inner_wrapper_fields if the module supplies it
+		Standardized wrapper divs around sidebar contents
+		Added .builder-module-sidebar-SIDEBAR-TYPE to sidebar wrapper
+	3.0.3 - 2010-01-10
+		Fixed sidebar registration/rendering naming for modules that allow more than one instance
+	3.0.4 - 2010-01-18
+		Fixed bad width style declarations for the top and bottom sidebars.
+		Added builder_module_render_VAR action that calls the render method.
+		Removed _start and _end actions.
+	3.0.5 - 2010-01-18
+		Removed clearfix from the element inner wrapper for navigation as it causes problems in IE7 and IE 8
+	3.0.6 - 2010-01-18
+		Added padding:0 and margin:0 to all outer wrappers to prevent plugins from breaking widths.
+	3.0.7 - 2010-02-17
+		Added widget-wrapper-NUM classes
+	3.0.8 - 2010-03-03
+		Fixed wideget-wrapper-top typo, changing it to widget-wrapper-top
+		Added builder-module-sidebar-with-element class
+	3.0.9 - 2010-04-20
+		Added code to handle the layout engine's new width-tracking code
+	3.0.10 - 2010-04-22
+		Added buider-module-element-outer-wrapper and builder-module-sidebar-outer-wrapper classes
+	3.0.11 - 2010-04-26
+		Internationalized strings
+	3.1.0 - 2010-08-24
+		Added support for alternate module styles
+	3.1.1 - 2010-09-02
+		Fixed warning condition for modules that support sidebars but aren't using one
+*/
+
+
+
+if ( ! class_exists( 'LayoutModule' ) ) {
+	class LayoutModule {
+		var $_name = 'Replace Me';
+		var $_var = 'replace_me';
+		var $_description = 'Replace this description.';
+		var $_max = 0; // 0 or 1
+		var $_editor_width = 300;
+		var $_module_count = 1;
+		var $_has_sidebars = true;
+		var $_can_remove_wrappers = false;
+		var $_current_width = null;
+		var $_module_styles = array();
+		
+		
+		function LayoutModule() {
+			add_action( 'builder_register_modules', array( &$this, 'register' ) );
+			add_action( "builder_module_render_{$this->_var}", array( &$this, 'render' ) );
+			add_action( "builder_module_render_contents_{$this->_var}", array( &$this, 'render_contents' ) );
+			add_action( "builder_module_render_element_block_{$this->_var}", array( &$this, 'render_element_block' ) );
+			add_action( "builder_module_render_element_block_contents_{$this->_var}", array( &$this, '_render' ) );
+			add_action( "builder_module_render_sidebar_block_{$this->_var}", array( &$this, 'render_sidebar_block' ), 10, 2 );
+			add_action( "builder_module_render_sidebar_block_contents_{$this->_var}", array( &$this, 'render_sidebar_block_contents' ), 10, 2 );
+			
+			if ( ! empty( $_REQUEST['modify_module_settings'] ) )
+				$module = $_REQUEST['modify_module_settings'];
+			else if ( ! empty( $_REQUEST['add_module'] ) )
+				$module = $_REQUEST['module'];
+			
+			
+			if ( ! empty( $module ) && ( $module === $this->_var ) ) {
+				add_action( 'builder_module_enqueue_admin_scripts', array( &$this, 'enqueue_admin_scripts' ) );
+				add_action( 'builder_module_enqueue_admin_styles', array( &$this, 'enqueue_admin_styles' ) );
+			}
+		}
+		
+		function enqueue_admin_scripts( $url_base ) {
+			if ( true === $this->_has_sidebars )
+				wp_enqueue_script( "{$this->_var}-sidebar-script", "$url_base/js/sidebars.js" );
+			
+			if ( file_exists( dirname( __FILE__ ) . "/{$this->_var}/js/module.js" ) )
+				wp_enqueue_script( "{$this->_var}-module-script", "$url_base/{$this->_var}/js/module.js" );
+		}
+		
+		function enqueue_admin_styles( $url_base ) {
+			// Meant to be overridden.
+		}
+		
+		function register() {
+			global $builder_modules;
+			
+			$builder_modules->register_module( $this );
+		}
+		
+		function get_editor_width() {
+			return $this->_editor_width;
+		}
+		
+		function get_layout_option() {
+			if ( true === $this->_has_sidebars )
+				return 'sidebar';
+			else
+				return 'notused';
+		}
+		
+		function get_defaults() {
+			$defaults = array();
+			
+			$this->_init_module_styles();
+			
+			if ( ! empty( $this->_module_styles ) )
+				$defaults['style'] = '';
+			if ( true === $this->_has_sidebars ) {
+				$defaults['sidebar'] = '1_right';
+				$defaults['sidebar_widths'] = '180';
+				$defaults['custom_sidebar_widths'] = '';
+			}
+			if ( true === $this->_can_remove_wrappers )
+				$defaults['remove_wrappers'] = '';
+			
+			if ( method_exists( &$this, '_get_defaults' ) )
+				$defaults = $this->_get_defaults( $defaults );
+			
+			return $defaults;
+		}
+		
+		function validate() {
+			$result = array( 'data' => $_POST );
+			
+			if ( true === $this->_has_sidebars ) {
+				if ( isset( $_POST['sidebar_widths'] ) && ( 'custom' === $_POST['sidebar_widths'] ) ) {
+					$result['data']['custom_sidebar_widths'] = preg_replace( '/\s+/', '', $_POST['custom_sidebar_widths'] );
+					
+					$expected_widths = array(
+						'none'		=> 0,
+						'1_left'	=> 1,
+						'2_left'	=> 2,
+						'split'		=> 2,
+						'1_right'	=> 1,
+						'2_right'	=> 2,
+						'split'		=> 2,
+						'split_1_2'	=> 3,
+						'split_2_1'	=> 3,
+						'split_2_2'	=> 4,
+						'split_1_3'	=> 4,
+						'split_3_1'	=> 4,
+					);
+					
+					$num_widths = count( explode( ',', $_POST['custom_sidebar_widths'] ) );
+					
+					if ( ( 1 === $expected_widths[$_POST['sidebar']] ) && ( 1 !== $num_widths ) )
+						$result['errors'][] = __( 'You must supply a width for the sidebar', 'LION' );
+					if ( $num_widths != $expected_widths[$_POST['sidebar']] )
+						$result['errors'][] = sprintf( __( 'You must supply %s widths separated by commas', 'LION' ), $expected_widths[$_POST['sidebar']] );
+					else if ( preg_match( '/[^0-9,\.]/', $result['data']['custom_sidebar_widths'] ) ) {
+						$result['errors'][] = __( 'Only numbers can be used for sidebar widths', 'LION' );
+					}
+					else if ( array_sum( explode( ',', $result['data']['custom_sidebar_widths'] ) ) > ( $_POST['layout_width'] - 200 ) )
+						$result['errors'][] = __( 'You must leave at least a 200 pixel area for the module content to render in. Please reduce the size of the sidebar widths.', 'LION' );
+					else {
+						foreach ( (array) explode( ',', $result['data']['custom_sidebar_widths'] ) as $width ) {
+							if ( $width < 20 ) {
+								$result['errors'][] = __( 'The minimum width for a sidebar is 20 pixels. Please ensure that all of your custom sidebar widths are 20 pixels or larger.', 'LION' );
+								break;
+							}
+						}
+					}
+				}
+			}
+			
+			if ( method_exists( &$this, '_validate' ) )
+				$result = $this->_validate( $result );
+			
+			return $result;
+		}
+		
+		function edit( $form, $results = true ) {
+			if ( isset( $results['errors'] ) )
+				$this->_print_errors( $results['errors'] );
+			
+			
+			$this->_init_module_styles();
+			
+			
+			if ( method_exists( &$this, '_before_table_edit' ) )
+				$this->_before_table_edit( $form, $results );
+			
+			echo "<table class='valign-top'>\n";
+			
+			if ( method_exists( &$this, '_start_table_edit' ) )
+				$this->_start_table_edit( $form, $results );
+			
+			
+			if ( true === $this->_has_sidebars ) {
+				$sidebars = array(
+					'none'		=> __( 'No Sidebars', 'LION' ),
+					'1_left'	=> __( '1 Left', 'LION' ),
+					'2_left'	=> __( '2 Left', 'LION' ),
+					'1_right'	=> __( '1 Right', 'LION' ),
+					'2_right'	=> __( '2 Right', 'LION' ),
+					'split'		=> __( 'Split (1 Left & 1 Right)', 'LION' ),
+/*					'split_1_2'	=> __( 'Split (1 Left & 2 Right)', 'LION' ),
+					'split_2_1'	=> __( 'Split (2 Left & 1 Right)', 'LION' ),
+					'split_2_2'	=> __( 'Split (2 Left & 2 Right)', 'LION' ),*/
+				);
+				
+				$default_widths = array(
+					'none'		=> array(),
+					'1_left'	=> array(
+						'150'		=> __( 'Narrow (150px)', 'LION' ),
+						'180'		=> __( 'Standard (180px)', 'LION' ),
+						'200'		=> __( 'Wide (200px)', 'LION' ),
+						'custom'	=> __( 'Custom...', 'LION' ),
+					),
+					'2_left'	=> array(
+						'150,150'	=> __( 'Narrow/Narrow (150px/150px)', 'LION' ),
+						'150,180'	=> __( 'Narrow/Standard (150px/180px)', 'LION' ),
+						'150,200'	=> __( 'Narrow/Wide (150px/200px)', 'LION' ),
+						'180,150'	=> __( 'Standard/Narrow (180px/150px)', 'LION' ),
+						'180,180'	=> __( 'Standard/Standard (180px/180px)', 'LION' ),
+						'180,200'	=> __( 'Standard/Wide (180px/200px)', 'LION' ),
+						'200,150'	=> __( 'Wide/Narrow (200px/150px)', 'LION' ),
+						'200,180'	=> __( 'Wide/Standard (200px/180px)', 'LION' ),
+						'200,200'	=> __( 'Wide/Wide (200px/200px)', 'LION' ),
+						'custom'	=> __( 'Custom...', 'LION' ),
+					),
+/*					'split_1_2'	=> array(
+						'150,150,150'	=> __( 'Narrow/Narrow/Narrow (150px/150px/150px)', 'LION' ),
+						'150,150,180'	=> __( 'Narrow/Narrow/Standard (150px/150px/180px)', 'LION' ),
+						'150,180,150'	=> __( 'Narrow/Standard/Narrow (150px/180px/150px)', 'LION' ),
+						'150,180,180'	=> __( 'Narrow/Standard/Standard (150px/180px/180px)', 'LION' ),
+						'180,150,150'	=> __( 'Standard/Narrow/Narrow (180px/150px/150px)', 'LION' ),
+						'180,150,180'	=> __( 'Standard/Narrow/Standard (180px/150px/180px)', 'LION' ),
+						'180,180,150'	=> __( 'Standard/Standard/Narrow (180px/180px/150px)', 'LION' ),
+						'180,180,180'	=> __( 'Standard/Standard/Standard (180px/180px/180px)', 'LION' ),
+						'custom'		=> __( 'Custom...', 'LION' ),
+					),
+					'split_2_2'	=> array(
+						'150,150,150,150'	=> __( 'Default (150px/150px/150px/150px)', 'LION' ),
+						'custom'			=> __( 'Custom...', 'LION' ),
+					),*/
+				);
+				
+				$default_widths['1_right'] = $default_widths['1_left'];
+				$default_widths['2_right'] = $default_widths['2_left'];
+				$default_widths['split'] = $default_widths['2_left'];
+//				$default_widths['split_2_1'] = $default_widths['split_1_2'];
+				
+				if ( isset( $_REQUEST['sidebar'] ) && isset( $default_widths[$_REQUEST['sidebar']] ) )
+					$starting_sidebar_widths = $default_widths[$_REQUEST['sidebar']];
+				else
+					$starting_sidebar_widths = null;
+				
+?>
+	<tr><td><label for="sidebar"><?php _e( 'Sidebars', 'LION' ); ?></label></td>
+		<td><?php $form->add_drop_down( 'sidebar', $sidebars ); ?></td>
+	</tr>
+	<tr id="sidebar-widths-row">
+		<td><?php _e( 'Sidebar&nbsp;Widths', 'LION' ); ?></td>
+		<td>
+			<?php $form->add_drop_down( 'sidebar_widths', null ); ?>
+			<div id="sidebar-widths-custom" style="display:none;">
+				<?php $form->add_text_box( 'custom_sidebar_widths', array( 'size' => '10', 'maxlength' => '20' ) ); ?><br />
+				<?php _e( 'Specify the width of each sidebar in pixels.', 'LION' ); ?><br />
+				<?php _e( 'For example, if you selected to have 2 Right sidebars and want to separate them into 170 pixel and 185 pixel widths, input <strong><code>170,185</code></strong> in the box above.', 'LION' ); ?>
+			</div>
+		</td>
+	</tr>
+<?php
+				
+			}
+			
+			if ( ! empty( $this->_module_styles ) ) {
+				asort( $this->_module_styles );
+				
+				$styles = array( '' => 'Default' );
+				$styles = array_merge( $styles, $this->_module_styles );
+				
+?>
+	<tr>
+		<td colspan="2">
+			<br />
+			<p>The active child theme (theme design) provides alternate styling options for this module. Use the following option to select an alternate style if desired.</p>
+		</td>
+	</tr>
+	<tr><td><label for="sidebar"><?php _e( 'Style', 'LION' ); ?></label></td>
+		<td><?php $form->add_drop_down( 'style', $styles ); ?></td>
+	</tr>
+<?php
+				
+			}
+			
+			
+			if ( method_exists( &$this, '_end_table_edit' ) )
+				$this->_end_table_edit( $form, $results );
+			
+			if ( true === $this->_can_remove_wrappers ) {
+				
+?>
+	<tr><td><label for="remove_wrappers"><?php _e( 'Remove&nbsp;Wrapper&nbsp;DIVs', 'LION' ); ?></label></td>
+		<td>
+			<?php $form->add_drop_down( 'remove_wrappers', array( '' => __( 'No', 'LION' ), '1' => __( 'Yes', 'LION' ) ) ); ?><br />
+			<strong><?php _e( 'Enabling this option is only recommended for advanced users as this can cause layout issues if not properly handled.', 'LION' ); ?></strong>
+		</td>
+	</tr>
+<?php
+				
+			}
+			
+			echo "</table>\n";
+			
+			if ( method_exists( &$this, '_after_table_edit' ) )
+				$this->_after_table_edit( $form, $results );
+			
+			
+			if ( true === $this->_has_sidebars ) {
+				
+?>
+	<div id="sidebar-widths-container" style="display:none;">
+		<?php foreach ( (array) $default_widths as $id => $options ) : ?>
+			<div id="sidebar-widths-container-<?php echo $id; ?>">
+				<?php $form->add_drop_down( "sidebar-widths-$id", $options ); ?>
+			</div>
+		<?php endforeach; ?>
+	</div>
+	
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		init_module_sidebar_editor();
+		/* ]]> */
+	</script>
+<?php
+				
+			}
+			
+			
+			if ( isset( $_REQUEST['save'] ) )
+				$form->add_hidden( 'had_error', '1' );
+		}
+		
+		function _print_errors( $errors ) {
+			if ( ! empty( $errors ) ) {
+				foreach ( (array) $errors as $error )
+					echo "<div id=\"message\" class=\"error\"><p><strong>$error</strong></p></div>\n";
+				
+				echo "<br />\n";
+			}
+		}
+		
+		function render( $fields ) {
+			$fields['remove_wrappers'] = false;
+			if ( ( true === $this->_can_remove_wrappers ) && ( ! empty( $fields['data']['remove_wrappers'] ) ) )
+				$fields['remove_wrappers'] = true;
+			
+			$fields = apply_filters( 'builder_module_filter_render_fields', $fields );
+			
+			$this->_data = $fields['data'];
+			$this->_get_widths( $fields );
+			
+			
+			$this->_open_module_wrappers( $fields );
+			
+			do_action( 'builder_module_render_contents', $fields );
+			
+			$this->_close_module_wrappers( $fields );
+		}
+		
+		function render_contents( $fields ) {
+			if ( true === $this->_has_sidebars ) {
+				if ( in_array( $fields['data']['sidebar'], array( '1_left', '2_left', 'split' ) ) )
+					do_action( 'builder_module_render_sidebar_block', $fields, 'left' );
+				
+				do_action( 'builder_module_render_element_block', $fields );
+				
+				if ( in_array( $fields['data']['sidebar'], array( '1_right', '2_right', 'split' ) ) )
+					do_action( 'builder_module_render_sidebar_block', $fields, 'right' );
+			}
+			else
+				do_action( 'builder_module_render_element_block', $fields );
+		}
+		
+		function _get_widths( $fields ) {
+			$data = $fields['data'];
+			
+			
+			$fields['widths']['container_width'] = apply_filters( 'builder_get_container_width', 0 );
+			$fields['widths']['content_width'] = $fields['widths']['container_width'];
+			$fields = apply_filters( 'builder_module_filter_widths', $fields );
+			
+			$this->_widths = $fields['widths'];
+			$this->_widths['element_width'] = $fields['widths']['content_width'];
+			$this->_widths['sidebar_widths'] = array();
+			$this->_widths['full_sidebar_width'] = 0;
+			
+			if ( ( true === $this->_has_sidebars ) && ( 'none' !== $data['sidebar'] ) ) {
+/*				if ( empty( $data['sidebar_widths'] ) )
+					break
+				
+				unset( $data['sidebar_widths'] );*/
+				
+				if ( ! empty( $data['sidebar_widths'] ) ) {
+					if ( 'custom' !== $data['sidebar_widths'] )
+						$this->_widths['sidebar_widths'] = explode( ',', $data['sidebar_widths'] );
+					else
+						$this->_widths['sidebar_widths'] = explode( ',', $data['custom_sidebar_widths'] );
+					
+					$this->_widths['full_sidebar_width'] = array_sum( (array) $this->_widths['sidebar_widths'] );
+					
+					$this->_widths['element_width'] = $this->_widths['content_width'] - $this->_widths['full_sidebar_width'];
+				}
+				else
+					ITError::admin_warn( 'empty_var:parameter:data[\'sidebar_widths\']', 'Unable to decide widths due to missing sidebar_widths value.' );
+			}
+			
+			$fields['widths'] = $this->_widths;
+			$fields = apply_filters( 'builder_module_filter_calculated_widths', $fields );
+			$this->_widths = $fields['widths'];
+		}
+		
+		function render_element_block( $fields ) {
+			$this->_open_element_wrappers( $fields );
+			
+			do_action( 'builder_module_render_element_block_contents', $fields );
+			
+			$this->_close_element_wrappers( $fields );
+		}
+		
+		function _open_element_wrappers( $fields ) {
+			$data = $fields['data'];
+			
+			if ( false === $fields['remove_wrappers'] ) {
+				if ( ( true !== $this->_has_sidebars ) || ( 'none' === $data['sidebar'] ) )
+					$class = 'single';
+				else if ( 'split' === $data['sidebar'] )
+					$class = 'middle';
+				else if ( preg_match( '/left/', $data['sidebar'] ) )
+					$class = 'right';
+				else
+					$class = 'left';
+				
+				$fields['attributes'] = array( 'class' => array( "{$fields['class_prefix']}-block-outer-wrapper", "{$fields['class_prefix']}-element-outer-wrapper", $class, 'clearfix' ), 'style' => array( "width:{$this->_widths['element_width']}px;" ) );
+				$outer_wrapper_results = apply_filters( 'builder_module_filter_element_outer_wrapper_attributes', $fields );
+				
+				$fields['attributes'] = array( 'class' => array( "{$fields['class_prefix']}-block", "{$fields['class_prefix']}-element" ) );
+				if ( 'navigation' !== $this->_var )
+					$fields['attributes']['class'][] = 'clearfix';
+				$inner_wrapper_results = apply_filters( 'builder_module_filter_element_inner_wrapper_attributes', $fields );
+				
+				ITUtility::print_open_tag( 'div', $outer_wrapper_results['attributes'] );
+				ITUtility::print_open_tag( 'div', $inner_wrapper_results['attributes'] );
+				
+				do_action( 'builder_layout_engine_set_current_area_width', $this->_widths['element_width'] );
+			}
+		}
+		
+		function _close_element_wrappers( $fields ) {
+			if ( false === $fields['remove_wrappers'] ) {
+				do_action( 'builder_layout_engine_set_current_area_width', null );
+				
+				echo "\n</div>\n</div>\n";
+			}
+		}
+		
+		function _open_module_wrappers( $fields ) {
+			if ( ! empty( $fields['data']['style'] ) ) {
+				$fields['outer_wrapper']['class'][] = $fields['data']['style'] . '-outer-wrapper';
+				$fields['inner_wrapper']['class'][] = $fields['data']['style'];
+			}
+			
+			if ( false === $fields['remove_wrappers'] ) {
+				$this->_render_module_outer_wrapper( $fields );
+				$this->_render_module_inner_wrapper( $fields );
+			}
+		}
+		
+		function _close_module_wrappers( $fields ) {
+			if ( false === $fields['remove_wrappers'] )
+				echo "\n</div>\n</div>\n";
+		}
+		
+		function _render_module_outer_wrapper( $fields ) {
+			$fields['attributes'] = $fields['outer_wrapper'];
+			$fields['attributes']['style'] = array( "width:{$this->_widths['container_width']}px;" );
+			
+			$results = apply_filters( 'builder_module_filter_outer_wrapper_attributes', $fields );
+			
+			ITUtility::print_open_tag( 'div', $results['attributes'] );
+		}
+		
+		function _render_module_inner_wrapper( $fields ) {
+			$fields['attributes'] = $fields['inner_wrapper'];
+			
+			if ( method_exists( $this, '_modify_module_inner_wrapper_fields' ) )
+				$fields = $this->_modify_module_inner_wrapper_fields( $fields );
+			
+			$results = apply_filters( 'builder_module_filter_inner_wrapper_attributes', $fields );
+			
+			ITUtility::print_open_tag( 'div', $results['attributes'] );
+			
+			$this->_module_count++;
+		}
+		
+		function render_sidebar_block( $fields, $side ) {
+			$data = $fields['data'];
+			
+			if ( "2_$side" === $data['sidebar'] )
+				$this->_open_sidebar_wrappers( $fields, $side, $this->_widths['full_sidebar_width'] );
+			else if ( in_array( $data['sidebar'], array( "1_$side", 'split' ) ) ) {
+				if ( 'left' === $side )
+					$width = $this->_widths['sidebar_widths'][0];
+				else
+					$width = ( '1_right' === $data['sidebar'] ) ? $this->_widths['sidebar_widths'][0] : $this->_widths['sidebar_widths'][1];
+				
+				$this->_open_sidebar_wrappers( $fields, $side, $width );
+			}
+			
+			do_action( 'builder_module_render_sidebar_block_contents', $fields, $side );
+			
+			$this->_close_sidebar_wrappers( $fields );
+		}
+		
+		function render_sidebar_block_contents( $fields, $side ) {
+			$data = $fields['data'];
+			
+			if ( 'none' === $data['sidebar'] )
+				return;
+			
+			$sidebar_name_prefix = "{$fields['layout']} - {$this->_name}";
+			
+			if ( 1 !== $this->_max )
+				$sidebar_name_prefix .= " - {$fields['id']}";
+			
+			if ( "2_$side" === $data['sidebar'] ) {
+				echo "<div class='widget-outer-wrapper single top' style='width:{$this->_widths['full_sidebar_width']}px;'>\n";
+				$this->_render_sidebar( $fields, "$sidebar_name_prefix - Top Sidebar", array( 'class' => array( 'widget-wrapper', 'single', 'top', 'widget-wrapper-single', 'widget-wrapper-top', 'widget-wrapper-1' ) ) );
+				echo "</div>\n";
+				
+				echo "<div class='widget-outer-wrapper left' style='width:{$this->_widths['sidebar_widths'][0]}px;'>\n";
+				do_action( 'builder_layout_engine_set_current_area_width', $this->_widths['sidebar_widths'][0] );
+				$this->_render_sidebar( $fields, "$sidebar_name_prefix - Left Sidebar", array( 'class' => array( 'widget-wrapper', 'middle', 'left', 'widget-wrapper-left', 'widget-wrapper-1' ) ) );
+				echo "</div>\n";
+				
+				echo "<div class='widget-outer-wrapper right' style='width:{$this->_widths['sidebar_widths'][1]}px;'>\n";
+				do_action( 'builder_layout_engine_set_current_area_width', $this->_widths['sidebar_widths'][1] );
+				$this->_render_sidebar( $fields, "$sidebar_name_prefix - Right Sidebar", array( 'class' => array( 'widget-wrapper', 'middle', 'right', 'widget-wrapper-right', 'widget-wrapper-2' ) ) );
+				echo "</div>\n";
+				
+				echo "<div class='widget-outer-wrapper single bottom' style='width:{$this->_widths['full_sidebar_width']}px;'>\n";
+				do_action( 'builder_layout_engine_set_current_area_width', $this->_widths['full_sidebar_width'] );
+				$this->_render_sidebar( $fields, "$sidebar_name_prefix - Bottom Sidebar", array( 'class' => array( 'widget-wrapper', 'single', 'bottom', 'widget-wrapper-single', 'widget-wrapper-bottom', 'widget-wrapper-1' ) ) );
+				echo "</div>\n";
+			}
+			else if ( preg_match( "/^(1_$side|split)$/", $data['sidebar'] ) ) {
+				if ( 'left' === $side )
+					$width = $this->_widths['sidebar_widths'][0];
+				else
+					$width = ( '1_right' === $data['sidebar'] ) ? $this->_widths['sidebar_widths'][0] : $this->_widths['sidebar_widths'][1];
+				
+				echo "<div class='widget-outer-wrapper single'>\n";
+				$this->_render_sidebar( $fields, "$sidebar_name_prefix - " . ucfirst( $side ) . ' Sidebar', array( 'class' => array( 'widget-wrapper', 'single', 'widget-wrapper-single', 'widget-wrapper-1' ) ) );
+				echo "</div>\n";
+			}
+		}
+		
+		function _open_sidebar_wrappers( $fields, $side, $width ) {
+			$sidebar_type_class = '';
+			$with_element_sidebar_class = '';
+			if ( isset( $fields['data']['sidebar'] ) ) {
+				$sidebar_type = str_replace( '_', '-', $fields['data']['sidebar'] );
+				$sidebar_type_class = "{$fields['class_prefix']}-sidebar-$sidebar_type";
+				
+				$with_element_sidebar_class = "{$fields['class_prefix']}-sidebar-with-element";
+			}
+			
+			$fields['attributes'] = array( 'class' => array( "{$fields['class_prefix']}-block-outer-wrapper", "{$fields['class_prefix']}-sidebar-outer-wrapper", $side, 'clearfix' ), 'style' => array( "width:{$width}px;" ) );
+			$outer_wrapper_results = apply_filters( 'builder_module_filter_sidebar_outer_wrapper_attributes', $fields );
+			
+			$fields['attributes'] = array( 'class' => array( "{$fields['class_prefix']}-block", "{$fields['class_prefix']}-sidebar", $sidebar_type_class, $with_element_sidebar_class, 'sidebar', $side, 'clearfix' ) );
+			$inner_wrapper_results = apply_filters( 'builder_module_filter_sidebar_inner_wrapper_attributes', $fields );
+			
+			ITUtility::print_open_tag( 'div', $outer_wrapper_results['attributes'] );
+			ITUtility::print_open_tag( 'div', $inner_wrapper_results['attributes'] );
+			
+			do_action( 'builder_layout_engine_set_current_area_width', $width );
+		}
+		
+		function _close_sidebar_wrappers( $fields ) {
+			do_action( 'builder_layout_engine_set_current_area_width', null );
+			
+			echo "\n</div>\n</div>\n";
+		}
+		
+		function _render_sidebar( $fields, $name, $attributes ) {
+			$fields['sidebar_name'] = $name;
+			$fields['attributes'] = $attributes;
+			
+			$results = apply_filters( 'builder_module_filter_sidebar_wrapper_attributes', $fields );
+			
+			ITUtility::print_open_tag( 'div', $results['attributes'] );
+			
+			unset( $fields['attributes'] );
+			do_action( 'builder_sidebar_render', $fields );
+			
+			echo "</div>\n";
+		}
+		
+		function register_sidebars( $module_data, $id, $layout ) {
+			$data = $module_data['data'];
+			$guid = $module_data['guid'];
+			
+			if ( method_exists( &$this, '_register_sidebars' ) )
+				$this->_register_sidebars( $module_data, $id, $layout );
+			
+			if ( ( true === $this->_has_sidebars ) && ( ! empty( $data['sidebar'] ) ) ) {
+				$sidebar_name_prefix = "$layout - {$this->_name}";
+				
+				if ( 1 !== $this->_max )
+					$sidebar_name_prefix .= " - $id";
+				
+				if ( preg_match( '/^(split_1_2|split_2_1|split_2_2)$/', $data['sidebar'] ) ) {
+					if ( 'split_1_2' === $data['sidebar'] )
+						$this->_register_sidebar( "$sidebar_name_prefix - Left Sidebar", $guid );
+					else {
+						$this->_register_sidebar( "$sidebar_name_prefix - Left - Top Sidebar", $guid );
+						$this->_register_sidebar( "$sidebar_name_prefix - Left - Left Sidebar", $guid );
+						$this->_register_sidebar( "$sidebar_name_prefix - Left - Right Sidebar", $guid );
+						$this->_register_sidebar( "$sidebar_name_prefix - Left - Bottom Sidebar", $guid );
+					}
+					
+					if ( 'split_2_1' === $data['sidebar'] )
+						$this->_register_sidebar( "$sidebar_name_prefix - Right Sidebar", $guid );
+					else {
+						$this->_register_sidebar( "$sidebar_name_prefix - Right - Top Sidebar", $guid );
+						$this->_register_sidebar( "$sidebar_name_prefix - Right - Left Sidebar", $guid );
+						$this->_register_sidebar( "$sidebar_name_prefix - Right - Right Sidebar", $guid );
+						$this->_register_sidebar( "$sidebar_name_prefix - Right - Bottom Sidebar", $guid );
+					}
+				}
+				else {
+					if ( preg_match( '/^(2_right|2_left)$/', $data['sidebar'] ) )
+						$this->_register_sidebar( "$sidebar_name_prefix - Top Sidebar", $guid );
+					
+					if ( preg_match( '/^(1_left|2_right|2_left|split)$/', $data['sidebar'] ) )
+						$this->_register_sidebar( "$sidebar_name_prefix - Left Sidebar", $guid );
+					
+					if ( preg_match( '/^(1_right|2_right|2_left|split)$/', $data['sidebar'] ) )
+						$this->_register_sidebar( "$sidebar_name_prefix - Right Sidebar", $guid );
+					
+					if ( preg_match( '/^(2_right|2_left)$/', $data['sidebar'] ) )
+						$this->_register_sidebar( "$sidebar_name_prefix - Bottom Sidebar", $guid );
+				}
+			}
+		}
+		
+		function _register_sidebar( $name, $guid ) {
+			$options = array();
+			
+			if ( is_array( $name ) )
+				$options = array_merge( $options, $name );
+			else
+				$options['name'] = $name;
+			
+			if ( ! isset( $this->_guid_count[$guid] ) )
+				$this->_guid_count[$guid] = 1;
+			else
+				$this->_guid_count[$guid]++;
+			
+			if ( empty( $options['id'] ) )
+				$options['id'] = "$guid-{$this->_guid_count[$guid]}";
+			
+			do_action( 'builder_sidebar_register', $options );
+		}
+		
+		function _init_module_styles() {
+			global $builder_module_styles;
+			
+			if ( ! empty( $this->_module_styles ) )
+				return;
+			
+			if ( isset( $builder_module_styles['*'] ) )
+				$this->_module_styles = array_merge( $this->_module_styles, $builder_module_styles['*'] );
+			if ( isset( $builder_module_styles[$this->_var] ) )
+				$this->_module_styles = array_merge( $this->_module_styles, $builder_module_styles[$this->_var] );
+			
+			$this->_module_styles = apply_filters( 'builder_module_register_styles', $this->_module_styles, $this->_var );
+			$this->_module_styles = apply_filters( "builder_module_register_styles_{$this->_var}", $this->_module_styles );
+			
+			if ( ! is_array( $this->_module_styles ) )
+				$this->_module_styles = array();
+		}
+		
+		function _get_sidebar_options() {
+			$sidebar_options = array(
+				'none'		=> array(
+					'name'		=> __( 'No Sidebars', 'LION' ),
+					'sidebars'	=> 0,
+				),
+				'1_left'	=> array(
+					'name'		=> __( '1 Left', 'LION' ),
+					'sidebars'	=> 1,
+				),
+				'2_left'	=> array(
+					'name'		=> __( '2 Left', 'LION' ),
+					'sidebars'	=> 2,
+				),
+				'1_right'	=> array(
+					'name'		=> __( '1 Right', 'LION' ),
+					'sidebars'	=> 1,
+				),
+				'2_right'	=> array(
+					'name'		=> __( '2 Right', 'LION' ),
+					'sidebars'	=> 2,
+				),
+				'split'		=> array(
+					'name'		=> __( 'Split (1 Left & 1 Right)', 'LION' ),
+					'sidebars'	=> 2,
+				),
+/*				'split_1_2'	=> array(
+					'name'		=> __( 'Split (1 Left & 2 Right)', 'LION' ),
+					'sidebars'	=> 3,
+				),
+				'split_2_1'	=> array(
+					'name'		=> __( 'Split (2 Left & 1 Right)', 'LION' ),
+					'sidebars'	=> 3,
+				),
+				'split_2_2'	=> array(
+					'name'		=> __( 'Split (2 Left & 2 Right)', 'LION' ),
+					'sidebars'	=> 4,
+				),
+				'split_1_3'	=> array(
+					'name'		=> __( 'Split (1 Left & 3 Right)', 'LION' ),
+					'sidebars'	=> 4,
+				),
+				'split_3_1'	=> array(
+					'name'		=> __( 'Split (3 Left & 1 Right)', 'LION' ),
+					'sidebars'	=> 4,
+				),*/
+			);
+			
+			$sidebar_options = apply_filters( 'builder_filter_module_sidebar_options', $sidebar_options, $this->_var );
+			$sidebar_options = apply_filters( "builder_filter_module_sidebar_options_{$this->_var}", $sidebar_options );
+			
+			return $sidebar_options;
+		}
+		
+		function _get_sidebar_width_options() {
+			$default_widths = array(
+				'none'		=> array(),
+				'1_left'	=> array(
+					'150'		=> __( 'Narrow (150px)', 'LION' ),
+					'180'		=> __( 'Standard (180px)', 'LION' ),
+					'200'		=> __( 'Wide (200px)', 'LION' ),
+					'custom'	=> __( 'Custom...', 'LION' ),
+				),
+				'2_left'	=> array(
+					'150,150'	=> __( 'Narrow/Narrow (150px/150px)', 'LION' ),
+					'150,180'	=> __( 'Narrow/Standard (150px/180px)', 'LION' ),
+					'150,200'	=> __( 'Narrow/Wide (150px/200px)', 'LION' ),
+					'180,150'	=> __( 'Standard/Narrow (180px/150px)', 'LION' ),
+					'180,180'	=> __( 'Standard/Standard (180px/180px)', 'LION' ),
+					'180,200'	=> __( 'Standard/Wide (180px/200px)', 'LION' ),
+					'200,150'	=> __( 'Wide/Narrow (200px/150px)', 'LION' ),
+					'200,180'	=> __( 'Wide/Standard (200px/180px)', 'LION' ),
+					'200,200'	=> __( 'Wide/Wide (200px/200px)', 'LION' ),
+					'custom'	=> __( 'Custom...', 'LION' ),
+				),
+/*				'split_1_2'	=> array(
+					'150,150,150'	=> __( 'Narrow/Narrow/Narrow (150px/150px/150px)', 'LION' ),
+					'150,150,180'	=> __( 'Narrow/Narrow/Standard (150px/150px/180px)', 'LION' ),
+					'150,180,150'	=> __( 'Narrow/Standard/Narrow (150px/180px/150px)', 'LION' ),
+					'150,180,180'	=> __( 'Narrow/Standard/Standard (150px/180px/180px)', 'LION' ),
+					'180,150,150'	=> __( 'Standard/Narrow/Narrow (180px/150px/150px)', 'LION' ),
+					'180,150,180'	=> __( 'Standard/Narrow/Standard (180px/150px/180px)', 'LION' ),
+					'180,180,150'	=> __( 'Standard/Standard/Narrow (180px/180px/150px)', 'LION' ),
+					'180,180,180'	=> __( 'Standard/Standard/Standard (180px/180px/180px)', 'LION' ),
+					'custom'		=> __( 'Custom...', 'LION' ),
+				),
+				'split_2_2'	=> array(
+					'150,150,150,150'	=> __( 'Default (150px/150px/150px/150px)', 'LION' ),
+					'custom'			=> __( 'Custom...', 'LION' ),
+				),*/
+			);
+			
+			$default_widths['1_right'] = $default_widths['1_left'];
+			$default_widths['2_right'] = $default_widths['2_left'];
+			$default_widths['split'] = $default_widths['2_left'];
+//			$default_widths['split_2_1'] = $default_widths['split_1_2'];
+		}
+	}
+	
+	// The following line should be uncommented and updated for active modules.
+//	new LayoutModule();
+}
+
+
+?>

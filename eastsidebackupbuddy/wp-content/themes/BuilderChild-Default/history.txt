@@ -1,0 +1,53 @@
+2.0.0 - 2010-04-23 - Chris Jean
+	Complete rebuild of the child theme
+	
+	Removed images/nav_bg.jpg
+	Added images/nav_bg.png
+	Updated style.css:
+		Rebuilt from the 2.4.0 release version of Builder
+2.0.1 - 2010-04-26
+	Updated style.css:
+		Changed all references widget title selectors from
+			.builder-module-sidebar .widget h4
+		to
+			.builder-module-sidebar h4.widget-title
+2.0.2 - 2010-04-28
+	Improved gallery styling using inline-block display type
+	
+	Updated style.css:
+		Modified:
+			.post .gallery-item
+			.post .gallery-item img
+2.0.3 - 2010-06-02
+	Updated to match 2.4.7 release of Builder
+	
+	Updated style.css
+2.0.4 - 2010-08-02
+	Updated to match Builder version 2.4.23
+2.6.1 - 2010-10-06 - Chris Jean
+	Updated to match Builder version 2.6.1
+	
+	Updated style.css:
+		Changed instances of:
+			line-height: 1.5em;
+		to:
+			line-height: 1.5;
+		
+		Added the following to the "table, img, input, textarea, select" selector:
+			height: auto;
+2.6.2 - 2010-10-13 - Matt Danner
+	Adding new screenshot
+2.7.0 - 2010-12-15 - Chris Jean
+	Updated to match Builder version 2.7.0
+	
+	Updated style.css:
+		Removed ".nocomments" rule
+2.8.0 - 2011-02-22 - Chris Jean
+	Updated to match Builder version 2.8.0
+	
+	Updated style.css:
+		Removed "a:focus, a:hover" rule
+		Added "a:focus" rule
+		Changed "a:hover" rule color to "#000000"
+		Removed "width: auto !important;" and "height: auto !important;" from
+			rule ".hentry img"
