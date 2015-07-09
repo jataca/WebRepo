@@ -1,5 +1,0 @@
-[Jul 2, 2015, 01:19:47-all] [message]Deleted.
-[Jul 2, 2015, 01:19:47-all] [message]Deleting `importbuddy.php (this script)`...
-[Jul 2, 2015, 01:19:47-all] [message]Deleted.
-[Jul 2, 2015, 01:19:47-all] Finished final step cleanup! Kerfuffle!
-[Jul 2, 2015, 01:19:47-all] Completed step #6.

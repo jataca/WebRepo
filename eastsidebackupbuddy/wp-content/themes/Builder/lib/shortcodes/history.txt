@@ -1,2 +1,0 @@
-0.0.1 - 2009-12-08
-	Initial test version
